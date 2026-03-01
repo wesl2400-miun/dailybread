@@ -21,15 +21,12 @@ export class Bible {
     const advSet = ADVICES.get(category);
     const advRef = randOpt(advSet);
     const psalmRef =  'Psalm'+ randOpt(psalmSet);
-    await Promise.all([
+    const [ advice, psalm] = await Promise.all([
       query(API.bible(advRef)),
       query(API.bible(psalmRef))
-    ]).then(data => {
-      const advice = data[0];
-      this._update(advice, 'advice');
-      const psalm = data[1];
-      this._update(psalm, 'psalm');
-    })
+    ]);
+    this._update(advice, 'advice');
+    this._update(psalm, 'psalm');
   }
 
   _update = (data, field) => {

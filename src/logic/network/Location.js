@@ -17,23 +17,24 @@ export class Location {
       || CITY.DEFAULT.LONGITUDE;
   }
 
-  update = async(city, error, save = false) => {
+  update = async(city, error) => {
     const data = await query(API.location(city));
     const location = data[0] || '';
     if(!this._isValid(city, location, error)) return;
-    console.log(location)
     const { display_name, lat, lon } = location;
     this.country = stateInfo(display_name);
     this.lat = lat;
     this.lon = lon;
-    if(save) {
-      localStorage.setItem(
-        COUNTRY.NAME, this.country);
-      localStorage.setItem(
-        CITY.LATITUDE, this.lat);
-      localStorage.setItem(
-        CITY.LONGITUDE, this.lon);
-    }
+  }
+
+  save = (save = false) => {
+    if(!save) return;
+    localStorage.setItem(
+      COUNTRY.NAME, this.country);
+    localStorage.setItem(
+      CITY.LATITUDE, this.lat);
+    localStorage.setItem(
+      CITY.LONGITUDE, this.lon);
   }
 
   _isValid = (city, location, error) => {

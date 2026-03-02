@@ -11,6 +11,6 @@ export const ADVICES = new Map([
   [EXCERPT.PERSECUTION, ['Matthew1:7']],
   [EXCERPT.JEWS, ['Matthew1:8']],
   [EXCERPT.GENTILES, ['Matthew1:9']],
-  [EXCERPT.HEATHENS, ['Matthew1:10']],
+  [EXCERPT.SCEPTICS, ['Matthew1:10']],
   [EXCERPT.SHABBAT, ['Matthew1:11']]
 ]);

@@ -11,6 +11,6 @@ export const PSALMS = new Map([
   [EXCERPT.PERSECUTION, ['7']],
   [EXCERPT.JEWS, ['8']],
   [EXCERPT.GENTILES, ['9']],
-  [EXCERPT.HEATHENS, ['10']],
+  [EXCERPT.SCEPTICS, ['10']],
   [EXCERPT.SHABBAT, ['12']]
 ]);

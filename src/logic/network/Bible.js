@@ -16,7 +16,6 @@ export class Bible {
 
   update = async (score) => {
     const category = score.category;
-    console.log(category)
     const psalmSet = PSALMS.get(category);
     const advSet = ADVICES.get(category);
     const advRef = randOpt(advSet);
@@ -39,10 +38,5 @@ export class Bible {
       });
       this[field] = new Scripture(reference, content);
     } else { console.error(`Bible passage not found.`) }
-  }
-
-  reset = () => {
-    this.advice = [];
-    this.psalm = [];
   }
 }

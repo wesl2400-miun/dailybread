@@ -8,7 +8,7 @@ const main = async () => {
 
   const error = new Error();
   const location = new Location();
-  await location.update('Kyoto', error);
+  await location.update('Helsingborg', error);
   console.log(location.country)
   const weather = new Weather();
   await weather.update(location);

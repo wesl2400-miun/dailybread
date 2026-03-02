@@ -12,11 +12,11 @@ export class Weather {
     const { lat, lon } = location;
     const data = await query(API.weather(lat, lon));
     if(data) {
-      const { daily, timezone } = data;
-      const { temperature_2m_mean, weather_code } = daily;
-      const today = weather_code[0];
-      this.temp = temperature_2m_mean[0];
-      this.code = today;
+      const { hourly, timezone } = data;
+      const { temperature_2m, weather_code } = hourly;
+      const now = weather_code[0];
+      this.temp = temperature_2m[0];
+      this.code = now;
       this.region = timezone.split('/')[0];
     }
   }

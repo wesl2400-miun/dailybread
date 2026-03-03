@@ -1,0 +1,37 @@
+import { API } from "../refs/api";
+import { query } from "../utils/query";
+
+export class Shabbat {
+  constructor() {
+    this.start = '';
+    this.end = '';
+    this.countdown = -1;
+  }
+
+  update = async (location) => {
+    const { lat, lon } = location;
+    const data = await query(API.shabbat(lat, lon));
+    if(data.error) return;
+    const { items } = data;
+    const start = this._times(items, 'candles');
+    this._updCountdown(start.day);
+    this.start = `${start.title} ${start.day}`;
+    const end = this._times(items, 'havdalah');
+    this.end = `${end.title} ${end.day}`;
+  }
+
+  _times = (items, category) => {
+    const time = items.filter(item => 
+      item.category === category)[0];
+    const { title, date } = time;
+    const day = date.split('T')[0];
+    return { title, day }
+  }
+
+  _updCountdown = async (day) => {
+    const data = await query(API.countdown(day));
+    if(data.error) return;
+    const { daysonly } = data;
+    this.countdown = daysonly;
+  }
+}

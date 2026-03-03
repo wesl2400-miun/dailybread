@@ -13,11 +13,12 @@ export class Score {
     this.category = EXCERPT.PRAISE;
   }
 
-  calculate = (weather, location) => {
+  calculate = (weather, location, shabbat) => {
     this._calcWCode(weather);
     this._calcTemp(weather);
     this._calcRegion(weather);
     this._calcCountry(location);
+    this._calcShab(shabbat);
     const divFactor = randOpt(BIBLESET);
     this._bibleset.push(divFactor);
     this.category = randOpt(this._bibleset);
@@ -72,5 +73,13 @@ export class Score {
     } else if(RISKZONE.includes(country)) {
       this._bibleset.push(EXCERPT.PERSECUTION);
     }
+  }
+
+  _calcShab = (shabbat) => {
+    const { countdown } = shabbat;
+    console.log(this._bibleset);
+    if(countdown !== 0) return;
+    this._bibleset.push(EXCERPT.SHABBAT);
+    console.log(this._bibleset);
   }
 }

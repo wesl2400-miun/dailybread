@@ -6,6 +6,9 @@ import { CITY } from "../refs/city.js";
 
 export class Location {
   constructor() {
+    this.city = localStorage
+      .getItem(CITY.NAME) 
+      || CITY.DEFAULT.NAME;
     this.country = localStorage
       .getItem(COUNTRY.NAME) 
       || COUNTRY.DEFAULT;
@@ -15,20 +18,25 @@ export class Location {
     this.lon = localStorage
       .getItem(CITY.LONGITUDE) 
       || CITY.DEFAULT.LONGITUDE;
+    this.error = '';
   }
 
-  update = async(city, error) => {
+  update = async(city) => {
     const data = await query(API.location(city));
     const location = data[0] || '';
-    if(!this._isValid(city, location, error)) return;
+    if(this._invalid(city, location)) return;
+    this.error = '';
     const { display_name, lat, lon } = location;
+    this.city = city;
     this.country = stateInfo(display_name);
     this.lat = lat;
     this.lon = lon;
   }
 
   save = (save = false) => {
-    if(!save) return;
+    if(!save || this.error.length > 0) return;
+    localStorage.setItem(
+      CITY.NAME, this.city);
     localStorage.setItem(
       COUNTRY.NAME, this.country);
     localStorage.setItem(
@@ -37,12 +45,13 @@ export class Location {
       CITY.LONGITUDE, this.lon);
   }
 
-  _isValid = (city, location, error) => {
+  _invalid = (city, location) => {
     const name = location?.name || '';
-    if(name.toLowerCase() !== city.toLowerCase()) {
-      error.update("Location not found." +  
-        " Are you sure you spelled it correctly?");
-      return false;
-    } else { return true; }
+    if(name.length === 0 
+      || name.toLowerCase() !== city.toLowerCase()) {
+      this.error = "Location not found." +  
+        " Are you sure you spelled it correctly?";
+      return true;
+    } else { return false; }
   }
 }

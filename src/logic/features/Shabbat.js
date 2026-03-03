@@ -3,18 +3,20 @@ import { query } from "../utils/query";
 
 export class Shabbat {
   constructor() {
+    this.city = '';
     this.start = '';
     this.end = '';
     this.countdown = -1;
   }
 
   update = async (location) => {
-    const { lat, lon } = location;
+    const { city, lat, lon } = location;
     const data = await query(API.shabbat(lat, lon));
     if(data.error) return;
     const { items } = data;
+    this.city = city;
     const start = this._times(items, 'candles');
-    this._updCountdown(start.day);
+    await this._updCountdown(start.day);
     this.start = `${start.title} ${start.day}`;
     const end = this._times(items, 'havdalah');
     this.end = `${end.title} ${end.day}`;

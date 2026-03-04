@@ -1,12 +1,13 @@
-import { API } from "../refs/api";
-import { query } from "../utils/query";
+import { API } from "../../refs/api.js";
+import { DEFAULT } from "../../refs/default.js";
+import { query } from "../../utils/query.js";
 
 export class Shabbat {
   constructor() {
     this.city = '';
     this.start = '';
     this.end = '';
-    this.countdown = -1;
+    this.countdown = DEFAULT.COUNTDOWN;
   }
 
   update = async (location) => {

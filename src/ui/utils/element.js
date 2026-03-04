@@ -25,12 +25,22 @@ export const article = (parent, style) => {
   return newNode('article', parent, null, style);
 }
 
+export const section = (parent, style) => {
+  return newNode('section', parent, null, style);
+}
+
+export const fieldset = (parent, title, style) => {
+  const node = newNode('fieldset', parent, null, style);
+  newNode('legend', node, title, null);
+  return node;
+}
+
 export const list = (parent) => {
   return newNode('ol', parent, null, null);
 }
 
-export const listItem = () => {
-  return newNode('li', null, null, null);
+export const listItem = (parent) => {
+  return newNode('li', parent, null, null);
 }
 
 export const form = (parent) => {
@@ -39,11 +49,8 @@ export const form = (parent) => {
   return form;
 }
 
-export const label = (parent, text) => {
-  return newNode('label',parent, text, null);
-}
-
-export const textfield = (parent, placeHolder) => {
+export const textfield = (parent, placeHolder, label) => {
+  newNode('label', parent, label, null);
   const input = newNode('input', parent, null, null);
   input.required = true;
   input.autocomplete = 'on';
@@ -51,9 +58,10 @@ export const textfield = (parent, placeHolder) => {
   return input;
 }
 
-export const checkbox = (parent) => {
+export const checkbox = (parent, label) => {
   const input = newNode('input', parent, null, null);
   input.type = 'checkbox';
+  newNode('label', parent, label, null);
   return input;
 }
 

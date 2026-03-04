@@ -1,5 +1,5 @@
-import { API } from "../refs/api.js";
-import { query } from "../utils/query.js";
+import { API } from "../../refs/api.js";
+import { query } from "../../utils/query.js";
 
 export class Weather {
   constructor() {
@@ -9,6 +9,7 @@ export class Weather {
   }
 
   update = async (location) => {
+    console.log(location);
     const { lat, lon } = location;
     const data = await query(API.weather(lat, lon));
     if(data) {

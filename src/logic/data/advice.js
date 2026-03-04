@@ -1,5 +1,5 @@
-import { Passage } from "../models/Passage";
-import { Scripture } from "../models/Scripture";
+import { Passage } from "../models/Passage.js";
+import { Scripture } from "../models/Scripture.js";
 
 export const ADVICE = new Scripture(
   'Matthew 7', [

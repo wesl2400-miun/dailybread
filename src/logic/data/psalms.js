@@ -1,4 +1,3 @@
-
 import { EXCERPT } from "../refs/excerpt.js";
 
 export const PSALMS = new Map([

@@ -1,7 +1,7 @@
 
 export class Scripture {
-  constructor(chapter, verses) {
+  constructor(chapter, passages) {
     this.chapter = chapter;
-    this.verses = verses;
+    this.passages = passages;
   }
 }

@@ -1,11 +1,11 @@
-import { randOpt } from "../utils/randOpt.js";
-import { EXCERPT } from "../refs/excerpt.js";
-import { BIBLESET } from "../refs/bibleset.js";
-import { WCODES } from "../data/wcodes.js";
-import { LIBZONE } from "../data/libzone.js";
-import { RISKZONE } from "../data/riskzone.js";
-import { GENTILES } from "../data/gentiles.js";
-import { SCEPTICS } from "../data/sceptics.js";
+import { randOpt } from "../../utils/randOpt.js";
+import { EXCERPT } from "../../refs/excerpt.js";
+import { BIBLESET } from "../../refs/bibleset.js";
+import { WCODES } from "../../data/wcodes.js";
+import { LIBZONE } from "../../data/libzone.js";
+import { RISKZONE } from "../../data/riskzone.js";
+import { GENTILES } from "../../data/gentiles.js";
+import { SCEPTICS } from "../../data/sceptics.js";
 
 export class Score {
   constructor() {

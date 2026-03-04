@@ -1,7 +1,7 @@
 
 export class Passage {
-  constructor(verse, text) {
+  constructor(number, verse) {
+    this.number = number;
     this.verse = verse;
-    this.text = text;
   }
 }

@@ -1,4 +1,3 @@
 export const COUNTRY = Object.freeze({
-  DEFAULT: 'Israel',
-  NAME: 'country_name',
+  NAME: 'country_name'
 });

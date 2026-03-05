@@ -1,6 +1,6 @@
 import { EXCERPT } from "../refs/excerpt.js";
 
-export const ADVICES = new Map([
+export const WISDOMS = new Map([
   [EXCERPT.PRAISE, ['Matthew1:1']],
   [EXCERPT.DEVOTION, ['Matthew1:2']],
   [EXCERPT.DOUBT, ['Matthew1:3']],

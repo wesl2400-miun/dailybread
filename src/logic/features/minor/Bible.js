@@ -1,31 +1,31 @@
 import { PSALM } from "../../data/psalm.js";
-import { ADVICE } from "../../data/advice.js";
+import { WISDOM } from "../../data/wisdom.js";
 import { PSALMS } from "../../data/Psalms.js";
 import { Passage } from "../../models/Passage.js";
 import { Scripture } from "../../models/Scripture.js";
 import { API } from "../../refs/api.js";
 import { query } from "../../utils/query.js";
 import { randOpt } from "../../utils/randOpt.js";
-import { ADVICES } from "../../data/advices.js";
 import { FIELD } from "../../../ui/refs/field.js";
+import { WISDOMS } from "../../data/wisdoms.js";
 
 export class Bible {
   constructor() {
-    this.advice = ADVICE;
+    this.wisdom = WISDOM;
     this.psalm = PSALM;
   }
 
   update = async (score) => {
     const category = score.category;
     const psalmSet = PSALMS.get(category);
-    const advSet = ADVICES.get(category);
-    const advRef = randOpt(advSet);
+    const wisSet = WISDOMS.get(category);
+    const wisRef = randOpt(wisSet);
     const psalmRef = 'Psalm' + randOpt(psalmSet);
-    const [ advice, psalm] = await Promise.all([
-      query(API.bible(advRef)),
+    const [ wisdom, psalm] = await Promise.all([
+      query(API.bible(wisRef)),
       query(API.bible(psalmRef))
     ]);
-    this._update(advice, FIELD.ADVICE);
+    this._update(wisdom, FIELD.WISDOM);
     this._update(psalm, FIELD.PSALM);
   }
 

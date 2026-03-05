@@ -1,5 +1,5 @@
 
 export const FIELD = Object.freeze({
-  ADVICE: 'advice',
+  WISDOM: 'wisdom',
   PSALM: 'psalm'
 });

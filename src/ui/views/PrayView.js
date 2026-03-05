@@ -10,7 +10,7 @@ export class PrayView {
 
   display = () => {
     this._root.innerHTML = '';
-    this._prayer.notify(FIELD.ADVICE, 
+    this._prayer.notify(FIELD.WISDOM,
       new BibleCard(this._root));
     this._prayer.notify(FIELD.PSALM, 
       new BibleCard(this._root));

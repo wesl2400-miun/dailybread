@@ -1,4 +1,5 @@
 import { FIELD } from "../../../ui/refs/field.js";
+import { CONTENT } from "../../data/content.js";
 
 export class Prayer {
   constructor(location, weather, 
@@ -39,9 +40,9 @@ export class Prayer {
   notify = (field, bibleCard) => {
     const { chapter, 
       passages } = this._bible[field];
-    const title = field === FIELD.ADVICE 
-      ? 'Jesus Advices You'
-      : 'Your Daily Prayer';
+    const title = field === FIELD.WISDOM
+      ? CONTENT.PRAY_VIEW.TITLE1
+      : CONTENT.PRAY_VIEW.TITLE2;
     bibleCard.addHeading('2', title);
     bibleCard.addHeading('3', chapter);
     bibleCard.addList();

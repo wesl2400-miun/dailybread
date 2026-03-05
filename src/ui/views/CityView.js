@@ -14,8 +14,10 @@ export class CityView {
   }
 
   _initInfo = (info) => {
-    info.addTitle('2', CONTENT.CITY_VIEW.TITLE);
+    info.addTitle('2', CONTENT.CITY_VIEW.TITLE1);
     info.addInfo(CONTENT.CITY_VIEW.ABOUT);
+    info.addTitle('3', CONTENT.CITY_VIEW.TITLE2);
+    info.addInfo(CONTENT.CITY_VIEW.POLICY);
   }
   
   wireForm = async (prayView, shabView) => {

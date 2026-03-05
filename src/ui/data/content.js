@@ -17,7 +17,8 @@
   }),
   PRAY_VIEW: Object.freeze({
     TITLE1: "Jesus' Words for You",
-    TITLE2: 'Your Daily Prayer'
+    TITLE2: 'Your Daily Prayer',
+    BACK_BTN: 'START OVER'
   }),
   SHAB_VIEW: Object.freeze({
     DEFAULT: 'Update your city to view relevant Shabbat times.',

@@ -71,3 +71,7 @@ export const submitBtn = (parent, title) => {
   input.value = title;
   return input;
 }
+
+export const button = (parent, title) => {
+  return newNode('button', parent, title, null);
+}

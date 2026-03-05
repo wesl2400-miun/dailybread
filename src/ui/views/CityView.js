@@ -13,6 +13,11 @@ export class CityView {
     prayer.loadCity(this._locCard);
   }
 
+  hide = (isHidden) => {
+    if(isHidden) this._root.style.display = 'none';
+    else this._root.style.display = 'block';
+  }
+
   _initInfo = (info) => {
     info.addTitle('2', CONTENT.CITY_VIEW.TITLE1);
     info.addInfo(CONTENT.CITY_VIEW.ABOUT);
@@ -20,10 +25,11 @@ export class CityView {
     info.addInfo(CONTENT.CITY_VIEW.POLICY);
   }
   
-  wireForm = async (prayView, shabView) => {
+  wire = async (prayView, shabView) => {
     await this._locCard.wire(async(city, save, errMess) => { 
       this._prayer.pickRandom(city, save, 
-        errMess, prayView, shabView);
+        errMess, this, prayView, shabView);
+        this.hide(true);
     });
   }
 }

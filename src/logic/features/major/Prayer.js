@@ -20,7 +20,7 @@ export class Prayer {
   }
 
   pickRandom = async (city, save, 
-    errTag, prayView, shabView) => {
+    errTag, cityView, prayView, shabView) => {
     await this._location.update(city);
     this._location.save(save);
     const { error } = this._location;
@@ -33,21 +33,7 @@ export class Prayer {
     this._score.calculate(this._weather, 
       this._location, this._shabbat);
     await this._bible.update(this._score);
-    prayView.display();
+    prayView.display(cityView, this._bible);
     shabView.refresh(this._shabbat);
-  }
-
-  notify = (field, bibleCard) => {
-    const { chapter, 
-      passages } = this._bible[field];
-    const title = field === FIELD.WISDOM
-      ? CONTENT.PRAY_VIEW.TITLE1
-      : CONTENT.PRAY_VIEW.TITLE2;
-    bibleCard.addHeading('2', title);
-    bibleCard.addHeading('3', chapter);
-    bibleCard.addList();
-    passages.forEach(passage => {
-      bibleCard.addItem(passage);
-    })
   }
 }

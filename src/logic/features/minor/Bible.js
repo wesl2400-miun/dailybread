@@ -6,7 +6,7 @@ import { Scripture } from "../../models/Scripture.js";
 import { API } from "../../refs/api.js";
 import { query } from "../../utils/query.js";
 import { randOpt } from "../../utils/randOpt.js";
-import { FIELD } from "../../../ui/refs/field.js";
+import { FIELD } from "../../refs/field.js";
 import { WISDOMS } from "../../data/wisdoms.js";
 
 export class Bible {

@@ -1,5 +1,5 @@
-import { FIELD } from "../../../ui/refs/field.js";
-import { CONTENT } from "../../data/content.js";
+import { FIELD } from "../../refs/field.js";
+import { CONTENT } from "../../../ui/data/content.js";
 
 export class Prayer {
   constructor(location, weather, 

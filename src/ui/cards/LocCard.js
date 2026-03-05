@@ -1,4 +1,4 @@
-import { CONTENT } from "../../logic/data/content.js";
+import { CONTENT } from "../data/content.js";
 import { DEFAULT } from "../../logic/refs/default.js";
 import { checkbox, fieldset, form, paragraph, submitBtn, textfield } from "../utils/element.js";
 

@@ -1,4 +1,4 @@
-import { CONTENT } from "../../logic/data/content.js";
+import { CONTENT } from "../data/content.js";
 import { InfoCard } from "../cards/InfoCard.js";
 import { article } from "../utils/element.js";
 import { LocCard } from "../cards/LocCard.js"

@@ -1,5 +1,5 @@
 import { BibleCard } from "../cards/BibleCard.js";
-import { FIELD } from "../refs/field.js";
+import { FIELD } from "../../logic/refs/field.js";
 import { article, heading } from "../utils/element.js";
 
 export class PrayView {

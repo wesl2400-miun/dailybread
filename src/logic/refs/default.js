@@ -1,8 +1,8 @@
 
 export const DEFAULT = Object.freeze({
-  COUNTRY: 'Israel',
-  CITY: 'Jerusalem',
-  LATITUDE: 31.7788472,
-  LONGITUDE: 35.2257856,
-  COUNTDOWN: -1
+  TEMP: 20,
+  WCODE: 0,
+  REGION: 'Europe',
+  WIS_REF: 'Matthew7:12',
+  PSALM_REF: 'Psalms117'
 });

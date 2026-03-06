@@ -1,26 +1,27 @@
-import { Score } from "./logic/features/minor/Score.js";
-import { Weather } from "./logic/features/minor/Weather.js";
-import { Location } from "./logic/features/minor/Location.js";
-import { Bible } from "./logic/features/minor/Bible.js";
-import { element,  } from "./ui/utils/element.js";
-import { Shabbat } from "./logic/features/minor/Shabbat.js";
+import { CalcScore } from "./logic/features/CalcScore.js";
+import { GetBible } from "./logic/features/GetBible.js";
+import { GetShabb } from "./logic/features/GetShabb.js";
+import { GetWeather } from "./logic/features/GetWeather.js";
+import { PickCity } from "./logic/features/PickCity.js";
+import { UserReq } from "./logic/models/UserReq.js";
 
-import { APP_ID, FOOTER_ID } from "./ui/refs/refs.js";
-import { AppView } from "./ui/views/AppView.js";
 
 const main = async () => {
-  const location = new Location();
-  const weather = new Weather();
-  const shabbat = new Shabbat();
-  const bible = new Bible();
-  const score = new Score();
-  
-  const footer = element(FOOTER_ID);
-  const app = element(APP_ID);
-  const appView = new AppView(app, footer);
-  appView.features(location, weather, 
-    shabbat, bible, score);
-  await appView.start();
+  const pickCity = new PickCity(new UserReq('Helsingborg'));
+  const location = await pickCity.location();
+  console.log(location);
+  const getWeather = new GetWeather(location);
+  const weather = await getWeather.weather();
+  console.log(weather);
+  const getShabb = new GetShabb(location);
+  const shabbat = await getShabb.shabbat();
+  console.log('shabbat ', shabbat)
+  const calcScore = new CalcScore(
+    location, weather, shabbat);
+  const score = calcScore.score();
+  console.log('score', score)
+  const getBible = new GetBible(score);
+  const bible = await getBible.bible();
 }
 
   

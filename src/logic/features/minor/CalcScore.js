@@ -1,14 +1,14 @@
-import { randOpt } from "../utils/utils.js";
-import { EXCERPT } from "../refs/excerpt.js";
-import { BIBLESET } from "../refs/bibleset.js";
-import { WCODES } from "../data/wcodes.js";
-import { LIBZONE } from "../data/libzone.js";
-import { RISKZONE } from "../data/riskzone.js";
-import { GENTILES } from "../data/gentiles.js";
-import { SCEPTICS } from "../data/sceptics.js";
-import { PSALMS } from "../data/Psalms.js";
-import { WISDOMS } from "../data/wisdoms.js";
-import { Score } from "../models/Score.js";
+import { randOpt } from "../../utils/utils.js";
+import { EXCERPT } from "../../refs/excerpt.js";
+import { BIBLESET } from "../../refs/bibleset.js";
+import { WCODES } from "../../data/wcodes.js";
+import { LIBZONE } from "../../data/libzone.js";
+import { RISKZONE } from "../../data/riskzone.js";
+import { GENTILES } from "../../data/gentiles.js";
+import { SCEPTICS } from "../../data/sceptics.js";
+import { PSALMS } from "../../data/Psalms.js";
+import { WISDOMS } from "../../data/wisdoms.js";
+import { Score } from "../../models/Score.js";
 
 export class CalcScore {
   constructor(location, weather, shabbat) {

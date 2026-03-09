@@ -1,8 +1,8 @@
-import { Shabbat } from "../models/Shabbat.js";
-import { emptyStr, query } from "../utils/utils.js";
-import { API } from "../refs/api.js";
+import { Shabbat } from "../../models/Shabbat.js";
+import { emptyStr, query } from "../../utils/utils.js";
+import { API } from "../../refs/api.js";
 
-export class GetShabb {
+export class GetShabbat {
   constructor(location) {
     this._location = location;
   }

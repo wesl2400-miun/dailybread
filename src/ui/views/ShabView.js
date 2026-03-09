@@ -1,5 +1,3 @@
-import { DEFAULT } from "../../logic/refs/default.js";
-import { emptyStr } from "../../logic/utils/emptyStr.js";
 import { CONTENT } from "../data/content.js";
 import { paragraph } from "../utils/element.js";
 
@@ -10,14 +8,10 @@ export class ShabView {
   }
 
   refresh = (shabbat) => {
-    const { city, start, end, 
-      countdown } = shabbat;
-    if(emptyStr(city) 
-      || emptyStr(start)
-      || emptyStr(end)
-      || countdown === DEFAULT.COUNTDOWN)
-      return;
+    if(!shabbat) return;
     this._root.innerHTML = '';
+    let { city, start, 
+      end, countdown } = shabbat;
     if(countdown === 0) {
       paragraph(this._root, CONTENT.SHAB_VIEW.TODAY);
     } else {

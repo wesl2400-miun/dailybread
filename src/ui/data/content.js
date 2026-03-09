@@ -13,7 +13,8 @@
     CITY: 'My City',
     DEFAULT: 'Make Jerusalem my default city',
     SAVE: 'Remember my location in this browser',
-    SUBMIT: 'PICK MY PRAYER'
+    SUBMIT: 'PICK MY PRAYER',
+    ERROR: 'City not found. Are you sure you spelled it correctly?'
   }),
   PRAY_VIEW: Object.freeze({
     TITLE1: "Jesus' Words for You",

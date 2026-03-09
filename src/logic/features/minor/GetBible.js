@@ -1,8 +1,8 @@
-import { Bible } from "../models/Bible.js";
-import { Passage } from "../models/Passage.js";
-import { Scripture } from "../models/Scripture.js";
-import { query } from "../utils/utils.js";
-import { API } from "../refs/api.js";
+import { Bible } from "../../models/Bible.js";
+import { Passage } from "../../models/Passage.js";
+import { Scripture } from "../../models/Scripture.js";
+import { query } from "../../utils/utils.js";
+import { API } from "../../refs/api.js";
 
 export class GetBible {
   constructor(score) {

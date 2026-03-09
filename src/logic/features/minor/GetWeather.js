@@ -1,6 +1,6 @@
-import { query } from "../utils/utils.js";
-import { API } from "../refs/api.js";
-import { Weather } from "../models/Weather.js";
+import { query } from "../../utils/utils.js";
+import { API } from "../../refs/api.js";
+import { Weather } from "../../models/Weather.js";
 
 export class GetWeather {
   constructor(location) {

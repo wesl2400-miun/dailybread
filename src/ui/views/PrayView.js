@@ -1,15 +1,15 @@
 import { BibleCard } from "../cards/BibleCard.js";
 import { FIELD } from "../../logic/refs/field.js";
-import { article, button, heading } from "../utils/element.js";
+import { article, button} from "../utils/element.js";
 import { CONTENT } from "../data/content.js";
+import { SCREEN } from "../refs/screen.js";
 
 export class PrayView {
-  constructor(parent, prayer) {
+  constructor(parent) {
     this._root = article(parent, null);
-    this._prayer = prayer;
   }
 
-  _display = (field, bible) => {
+  _showField = (field, bible) => {
     const { chapter, 
       passages } = bible[field];
     const title = field === FIELD.WISDOM
@@ -24,14 +24,19 @@ export class PrayView {
     });
   }
 
-  display = (cityView, bible) => {
-    const backBtn = button(this._root, 
+  _display = (bible) => {
+    this._root.innerHTML = '';
+    this._showField(FIELD.WISDOM, bible);
+    this._showField(FIELD.PSALM, bible);
+  }
+
+  wire = (refresh, bible) => {
+    this._display(bible);
+    this._backBtn = button(this._root, 
       CONTENT.PRAY_VIEW.BACK_BTN);
-    backBtn.addEventListener('click', () => {
-      this._root.innerHTML = '';
-      cityView.hide(false);
+    console.log(this._backBtn);
+    this._backBtn.addEventListener('click', async () => {
+      refresh(SCREEN.LOCATION);
     });
-    this._display(FIELD.WISDOM, bible);
-    this._display(FIELD.PSALM, bible);
   }
 }

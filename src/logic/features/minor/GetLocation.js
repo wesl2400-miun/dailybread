@@ -1,18 +1,17 @@
-import { cityNotFound, getCountry, formatCity } from "../utils/utils.js";
-import { Location } from "../models/Location.js";
-import { query } from "../utils/utils.js";
-import { API } from "../refs/api.js";
+import { cityNotFound, getCountry, formatCity } from "../../utils/utils.js";
+import { Location } from "../../models/Location.js";
+import { query } from "../../utils/utils.js";
+import { API } from "../../refs/api.js";
 
-export class PickCity {
-  constructor(userReq) {
-    this._userReq = userReq;
+export class GetLocation {
+  constructor(userCity) {
+    this._userCity = userCity;
   }
 
   _fromAPI = async () => {
-    const { userCity } = this._userReq;
-    if(!userCity) return null;
+    if(!this._userCity) return null;
     const data = await query(
-      API.location(userCity));
+      API.location(this._userCity));
     return data[0] || null;
   }
 
@@ -28,16 +27,12 @@ export class PickCity {
   }
 
   location = async () => {
-    const location = new Location();
-    if(location.loaded()) return location;
-    const { userCity, saveLoc } = this._userReq;
     const result = await this._fromAPI();
     if(!result) return null;
     const fromAPI = this._unpackLoc(result);
     const notFound = cityNotFound(
-      userCity, fromAPI.city);
+      this._userCity, fromAPI.city);
     if(notFound) return null;
-    if(saveLoc) fromAPI.remember();
     return fromAPI;
   }
 }

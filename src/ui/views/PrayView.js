@@ -34,7 +34,6 @@ export class PrayView {
     this._display(bible);
     this._backBtn = button(this._root, 
       CONTENT.PRAY_VIEW.BACK_BTN);
-    console.log(this._backBtn);
     this._backBtn.addEventListener('click', async () => {
       refresh(SCREEN.LOCATION);
     });

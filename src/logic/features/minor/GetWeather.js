@@ -9,7 +9,6 @@ export class GetWeather {
 
   _unpackWeath = (result) => {
     const { daily, timezone } = result;
-    console.log(result)
     const { temperature_2m_mean, 
       weather_code } = daily;
     const now = weather_code[0];

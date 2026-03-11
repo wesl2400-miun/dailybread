@@ -28,8 +28,8 @@ export class App {
         pView.wire(this.refresh, bible);
         const shabView = new ShabView(this._footer);
         shabView.refresh(shabbat);
+        element(VIEW_ID.APP).scrollIntoView();
         break;
     }
-    element(VIEW_ID.APP).scrollIntoView();
   }
 }

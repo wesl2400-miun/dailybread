@@ -114,6 +114,10 @@ h3 {
     @include layout.desktop;
   }
 
+  header img {
+    height: 120px;
+  }
+
   main {
     width: 400px;
     border-left: 3px solid colors.$brand-accent;

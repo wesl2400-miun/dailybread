@@ -11,7 +11,6 @@ const main = async () => {
  
   const appView = new AppView(app, footer);
   await appView.init(SCREEN.LOCATION);
-
 }
 
 

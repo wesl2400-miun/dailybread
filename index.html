@@ -5,17 +5,33 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link rel="stylesheet" href="./src/ui/css/root.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>dailybread</title>
+    <meta name="description" content="Prayer App for Messianic Jews and Gentiles that adapts to weather, Shabbat times and region. Get a daily personalized prayer and wisdom from Psalms and New Testament. ">
+    <title>Christian Prayer App | Based on Shabbat, Weather and Location | DailyBread</title>
+    
+    <!-- 
+    ** Bara den angivna länken ska prioriteras av sökomotorer. 
+    ** Eftersom appen är en Single Page App och innehållet genereras för det mesta dynamiskt
+    ** måste sökomotorer vägledas till denna URL för att hitta viktiga nyckelord
+    -->
+    <link rel="canonical" href="https://wesl2400-miun.github.io/dailybread">
   </head>
   <body>
     <header>
+      <!-- Denna text är alltid synlig för SEO:s skull så att appens nyckelord kan hittas av sökmotorer -->
       <h1>Messianic Prayer App</h1>
       <p>A personalized daily evangelical Christian prayer app for Messianic Jews and Gentiles.</p>
     </header>
     <main id="app"></main>
     <footer>
+      <!-- 
+      ** Appens nyckelord inkluderas i sidfoten som en del av sökmotoroptimering.
+      ** Detta statiska innehåll uppdateras sedan dynamiskt baserat på responsen 
+      ** från hebcal och openstreetmap apier 
+      -->
       <p>Shabbat times</p>
-      <div id="footer"></div>
+      <div id="footer">
+        <p>Update your location and get relevant Shabbat Candle Lighting and Havdalah times.</p>
+      </div>
     </footer>
     <script type="module" src="/src/main.js"></script>
   </body>

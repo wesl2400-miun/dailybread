@@ -11,18 +11,16 @@
   LOC_CARD: Object.freeze({
     TITLE: 'Type Your City',
     CITY: 'My City',
-    DEFAULT: 'Make Jerusalem my default city',
     SAVE: 'Remember my location in this browser',
     SUBMIT: 'PICK MY PRAYER',
     ERROR: 'City not found. Are you sure you spelled it correctly?'
   }),
   PRAY_VIEW: Object.freeze({
-    TITLE1: "Jesus' Words for You",
+    TITLE1: "Your Daily Wisdom",
     TITLE2: 'Your Daily Prayer',
     BACK_BTN: 'START OVER'
   }),
   SHAB_VIEW: Object.freeze({
-    DEFAULT: 'Update your city to view relevant Shabbat times.',
     TODAY: 'Today is Shabbat! Enjoy your rest.',
     daysLeft: (countdown) => `${countdown} days until Shabbat.`,
     times: (city) => `Times apply to ${city}.`

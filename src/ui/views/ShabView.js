@@ -4,7 +4,6 @@ import { paragraph } from "../utils/element.js";
 export class ShabView {
   constructor(root) {
     this._root = root;
-    paragraph(this._root, CONTENT.SHAB_VIEW.DEFAULT);
   }
 
   refresh = (shabbat) => {

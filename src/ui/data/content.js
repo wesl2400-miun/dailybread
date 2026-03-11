@@ -5,8 +5,7 @@
     ABOUT: 'Our Bible engine generates a personalized Bible passage and prayer ' +
     'based on your region, current weather, and Shabbat times.',
     TITLE2: 'Privacy Policy',
-    POLICY: 'We gather location data only to provide a personalized prayer experience. ' +
-      "If you don't want to share you location data, select the checkbox for the default city. "
+    POLICY: 'We gather location data only to provide a personalized prayer experience. '
   }),
   LOC_CARD: Object.freeze({
     TITLE: 'Type Your City',

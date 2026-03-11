@@ -1,3 +1,148 @@
+.flex-column, body, header, section, .gallery,
+.gallery picture, article, footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
+body {
+  width: 100vw;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #D7D699;
+  color: #3B3B3B;
+  font-size: 18px;
+  font-family: "Public Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  height: 140px;
+  padding: 0;
+  margin: 0;
+  border-bottom: 3px solid #B8B781;
+  background-color: #FFFFFF;
+}
+
+main {
+  width: 320px;
+  height: fit-content;
+  max-width: 50ch;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 0;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 250px;
+}
+
+section {
+  width: 100%;
+}
+
+.intro {
+  background-color: #375486;
+  color: #FFFFFF;
+  padding: 1rem;
+}
+
+.gallery,
+.gallery picture {
+  margin: 0;
+  padding: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+article {
+  width: 285px;
+  border-radius: 5px;
+  padding: 1rem;
+  background-color: #FFFFFF;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 200px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  border-top: 3px solid #B8B781;
+  background-color: #FFFFFF;
+  font-size: 16px;
+}
+
+#shabbat {
+  max-width: 25ch;
+}
+#shabbat p {
+  padding: 0;
+  margin: 0;
+}
+
+.title {
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 1.7rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+@media screen and (min-width: 945px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    flex-direction: row;
+    background-color: #FFFFFF;
+  }
+  header {
+    width: 25%;
+    height: 100vh;
+    height: fit-content;
+    border: none;
+    top: 40px;
+  }
+  main {
+    width: 400px;
+    border-left: 3px solid #B8B781;
+    border-right: 3px solid #B8B781;
+    background-color: #D7D699;
+  }
+  article {
+    width: 370px;
+  }
+  footer {
+    position: sticky;
+    width: 25%;
+    height: 100vh;
+    height: fit-content;
+    border: none;
+    top: 40px;
+  }
+}
 
 /*# sourceMappingURL=root.css.map */

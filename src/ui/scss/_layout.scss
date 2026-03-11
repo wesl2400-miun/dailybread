@@ -1,0 +1,24 @@
+
+@mixin flex($cont, $item, $dir) {
+  display: flex;
+  justify-content: $cont;
+  align-items: $item;
+  flex-direction: $dir;
+}
+
+@mixin no-margins {
+  padding: 0;
+  margin: 0;
+}
+
+.flex-column {
+  @include flex(center, center, column);
+}
+
+@mixin desktop {
+  width: 25%;
+  height: 100vh;
+  height: fit-content;
+  border: none;
+  top: 40px;
+}

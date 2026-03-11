@@ -1,4 +1,6 @@
 import { SCREEN } from "../../ui/refs/screen.js";
+import { VIEW_ID } from "../../ui/refs/view-id.js";
+import { element } from "../../ui/utils/element.js";
 import { LocView } from "../../ui/views/LocView.js";
 import { PrayView } from "../../ui/views/PrayView.js";
 import { ShabView } from "../../ui/views/ShabView.js";
@@ -28,5 +30,6 @@ export class App {
         shabView.refresh(shabbat);
         break;
     }
+    element(VIEW_ID.APP).scrollIntoView();
   }
 }

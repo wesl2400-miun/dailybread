@@ -4,10 +4,15 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link rel="stylesheet" href="./src/ui/css/root.css">
+    <link rel="icon" type="image/svg+xml" href="./src/ui/assets/favicon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Prayer App for Messianic Jews and Gentiles that adapts to weather, Shabbat times and region. Get a daily personalized prayer and wisdom from Psalms and New Testament. ">
     <title>Christian Prayer App | Based on Shabbat, Weather and Location | DailyBread</title>
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <!-- 
     ** Bara den angivna länken ska prioriteras av sökomotorer. 
     ** Eftersom appen är en Single Page App och innehållet genereras för det mesta dynamiskt
@@ -17,19 +22,49 @@
   </head>
   <body>
     <header>
-      <!-- Denna text är alltid synlig för SEO:s skull så att appens nyckelord kan hittas av sökmotorer -->
-      <h1>Messianic Prayer App</h1>
-      <p>A personalized daily evangelical Christian prayer app for Messianic Jews and Gentiles.</p>
+      <img src="./src/ui/assets/logo.svg" height="100" alt="DailyBread Logo">  
     </header>
-    <main id="app"></main>
+    <main>
+      <section>
+        <div class="gallery">
+          <picture>
+            <!-- Dator -->
+            <source
+              srcset="./src/ui/assets/jesus-400w.webp"
+              media="(min-width: 945px)"
+              type="image/webp">
+
+            <source
+              srcset="./src/ui/assets/jesus-400w.jpg"
+              media="(min-width: 945px)"
+              type="image/jpeg">
+
+            <!-- Mobil -->
+            <source
+              srcset="./src/ui/assets/jesus-320w.webp"
+              type="image/webp">
+
+            <img fetchpriority="high" src="./src/ui/assets/jesus-320w.jpg" alt="Jesus stands in a synagogue and teaches Torah.">
+          </picture>
+        </div>
+        <!-- Denna delen är alltid synlig för SEO:s skull så att appens nyckelord kan hittas av sökmotorer -->
+        <div class="intro">
+          <h1>Messianic Prayer App</h1>
+          <p>A personalized daily evangelical Christian prayer app for Messianic Jews and Gentiles.</p>
+        </div>
+      </section>
+
+      <!-- Här genereras kortvyerna dynamiskt -->
+      <div id="app"></div>
+    </main>
     <footer>
       <!-- 
       ** Appens nyckelord inkluderas i sidfoten som en del av sökmotoroptimering.
       ** Detta statiska innehåll uppdateras sedan dynamiskt baserat på responsen 
       ** från hebcal och openstreetmap apier 
       -->
-      <p>Shabbat times</p>
-      <div id="footer">
+      <p class="title">Shabbat times</p>
+      <div id="shabbat">
         <p>Update your location and get relevant Shabbat Candle Lighting and Havdalah times.</p>
       </div>
     </footer>

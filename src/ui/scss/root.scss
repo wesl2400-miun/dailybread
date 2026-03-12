@@ -79,7 +79,7 @@ footer {
   text-align: center;
   border-top: 3px solid colors.$brand-accent;
   background-color: colors.$brand-background;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .shabbat-title {
@@ -95,8 +95,6 @@ footer {
   }
 }
 
-
-
 h1 {
   font-size: 1.7rem;
 }
@@ -109,22 +107,7 @@ h3 {
   font-size: 1.2rem;
 }
 
-@media screen and (min-width: 1000px) {
-  main {
-    width: 400px;
-  }
-
-  article {
-    width: 370px;
-  }
-
-  header img {
-    height: 120px;
-  }
-}
-
-@media screen and (min-width: 1000px), 
-(orientation: landscape) {
+@media screen and (orientation: landscape) and (min-width: 820px) {
   body {
     @include layout.flex(center, start, column);
     flex-direction: row;
@@ -141,5 +124,20 @@ h3 {
 
   footer {
     @include layout.desktop;
+  }
+}
+
+
+@media screen and (min-width: 1000px) {
+  main {
+    width: 400px;
+  }
+
+  article {
+    width: 370px;
+  }
+
+  header img {
+    height: 120px;
   }
 }

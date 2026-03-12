@@ -11,7 +11,7 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
-  background-color: #D7D699;
+  background-color: #FFFFFF;
   color: #3B3B3B;
   font-size: 18px;
   font-family: "Public Sans", sans-serif;
@@ -22,9 +22,8 @@ body {
 
 header {
   width: 100%;
-  height: 140px;
-  padding: 0;
   margin: 0;
+  padding: 1rem 0;
   border-bottom: 3px solid #B8B781;
   background-color: #FFFFFF;
 }
@@ -42,6 +41,7 @@ main {
   padding-left: 2rem;
   padding-right: 2rem;
   padding-bottom: 250px;
+  background-color: #D7D699;
 }
 
 section {
@@ -75,13 +75,19 @@ footer {
   left: 0;
   right: 0;
   width: 100%;
-  height: 200px;
-  padding: 0;
+  height: fit-content;
   margin: 0;
+  padding: 1rem;
   text-align: center;
   border-top: 3px solid #B8B781;
   background-color: #FFFFFF;
   font-size: 16px;
+}
+
+.shabbat-title {
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
 }
 
 #shabbat {
@@ -90,10 +96,6 @@ footer {
 #shabbat p {
   padding: 0;
   margin: 0;
-}
-
-.title {
-  font-weight: 600;
 }
 
 h1 {
@@ -115,6 +117,9 @@ h3 {
   article {
     width: 370px;
   }
+  header img {
+    height: 120px;
+  }
 }
 @media screen and (min-width: 1000px), (orientation: landscape) {
   body {
@@ -123,7 +128,6 @@ h3 {
     align-items: start;
     flex-direction: column;
     flex-direction: row;
-    background-color: #FFFFFF;
   }
   header {
     width: 25%;
@@ -134,13 +138,9 @@ h3 {
     margin: 0 auto;
     top: 40px;
   }
-  header img {
-    height: 120px;
-  }
   main {
     border-left: 3px solid #B8B781;
     border-right: 3px solid #B8B781;
-    background-color: #D7D699;
   }
   footer {
     width: 25%;

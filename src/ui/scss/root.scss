@@ -7,7 +7,7 @@ body {
   height: 100%;
   @extend .flex-column;
   @include layout.no-margins;
-  background-color: colors.$brand-primary-variant;
+  background-color: colors.$brand-background;
   color: colors.$brand-text-dark;
   font-size: 18px;
   font-family: "Public Sans", sans-serif;
@@ -18,9 +18,9 @@ body {
 
 header {
   width: 100%;
-  height: 140px;
   @extend .flex-column;
-  @include layout.no-margins;
+  margin: 0;
+  padding: 1rem 0;
   border-bottom: 3px solid colors.$brand-accent;
   background-color: colors.$brand-background;
 }
@@ -35,6 +35,7 @@ main {
   padding-left: 2rem;
   padding-right: 2rem;
   padding-bottom: 250px;
+  background-color: colors.$brand-primary-variant;
 }
 
 section {
@@ -70,13 +71,19 @@ footer {
   left: 0;
   right: 0;
   width: 100%;
-  height: 200px;
+  height: fit-content;
   @extend .flex-column;
-  @include layout.no-margins;
+  margin: 0;
+  padding: 1rem;
   text-align: center;
   border-top: 3px solid colors.$brand-accent;
   background-color: colors.$brand-background;
   font-size: 16px;
+}
+
+.shabbat-title {
+  font-weight: 600;
+  @include layout.no-margins;
 }
 
 #shabbat {
@@ -87,9 +94,7 @@ footer {
   }
 }
 
-.title {
-  font-weight: 600;
-}
+
 
 h1 {
   font-size: 1.7rem;
@@ -107,9 +112,13 @@ h3 {
   main {
     width: 400px;
   }
-  
+
   article {
     width: 370px;
+  }
+
+  header img {
+    height: 120px;
   }
 }
 
@@ -118,21 +127,15 @@ h3 {
   body {
     @include layout.flex(center, start, column);
     flex-direction: row;
-    background-color: colors.$brand-background;
   }
 
   header {
     @include layout.desktop;
   }
 
-  header img {
-    height: 120px;
-  }
-
   main {
     border-left: 3px solid colors.$brand-accent;
     border-right: 3px solid colors.$brand-accent;
-    background-color: colors.$brand-primary-variant;
   }
 
   footer {

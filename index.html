@@ -30,23 +30,34 @@
           <picture>
             <!-- Dator -->
             <source
+              srcset="./src/ui/assets/jesus-500w.webp"
+              media="(min-width: 500px)"
+              type="image/webp">
+
+            <source
+              srcset="./src/ui/assets/jesus-500w.jpg"
+              media="(min-width: 500px)"
+              type="image/jpeg">
+
+            <!-- Surfplatta -->
+            <source
               srcset="./src/ui/assets/jesus-400w.webp"
-              media="(min-width: 1000px)"
+              media="(min-width: 400px)"
               type="image/webp">
 
             <source
               srcset="./src/ui/assets/jesus-400w.jpg"
-              media="(min-width: 1000px)"
+              media="(min-width: 400px)"
               type="image/jpeg">
 
             <!-- Mobil -->
             <source
-              srcset="./src/ui/assets/jesus-280w.webp"
+              srcset="./src/ui/assets/jesus-320w.webp"
               type="image/webp">
 
             <img 
               fetchpriority="high" 
-              src="./src/ui/assets/jesus-280w.jpg" 
+              src="./src/ui/assets/jesus-320w.jpg"
               alt="Jesus stands in a synagogue and teaches Torah.">
           </picture>
         </div>

@@ -73,6 +73,8 @@ footer {
   left: 0;
   right: 0;
   width: 100%;
+  @extend .flex-column;
+  @include layout.no-margins;
   height: fit-content;
   padding: 1rem;
   box-sizing: border-box;
@@ -83,13 +85,16 @@ footer {
 }
 
 .shabbat-title {
+  width: fit-content;
   font-weight: 600;
   @include layout.no-margins;
 }
 
 #shabbat {
   max-width: 25ch;
-  margin: auto;
+  width: 100%;
+  @extend .flex-column;
+  box-sizing: border-box;
   p {
     @include layout.no-margins;
   }
@@ -177,10 +182,21 @@ ol {
   }
 }
 
-@media screen and (orientation: landscape) and (min-width: 820px) {
+@media screen and (min-width: 400px) {
+  article, .banner {
+    width: dimens.$main-w-tablet;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  article, .banner {
+    width: dimens.$main-w-desktop;
+  }
+}
+
+@media screen and (orientation: landscape) and (min-width: 1000px) {
   body {
-    @include layout.flex(center, start, column);
-    flex-direction: row;
+    @include layout.flex(center, start, row);
   }
 
   .logo {
@@ -188,7 +204,7 @@ ol {
   }
 
   main {
-    width: 50%;
+    width: fit-content;
     border-left: 3px solid colors.$brand-accent;
     border-right: 3px solid colors.$brand-accent;
   }
@@ -199,12 +215,3 @@ ol {
 }
 
 
-@media screen and (min-width: 1000px) {
-  article, .banner {
-    width: dimens.$main-w-desktop;
-  }
-
-  .logo img {
-    height: 120px;
-  }
-}

@@ -1,4 +1,4 @@
-.flex-column, body, .logo, .banner, .gallery, .gallery picture img, article, .checker label {
+.flex-column, body, .logo, .banner, .gallery, .gallery picture img, article, footer, #shabbat, .checker label {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,7 +71,7 @@ main {
 }
 
 .banner {
-  width: 280px;
+  width: 320px;
 }
 
 .intro {
@@ -88,7 +88,7 @@ main {
 }
 
 article {
-  width: 280px;
+  width: 320px;
   border-radius: 5px;
   background-color: #FFFFFF;
 }
@@ -102,6 +102,8 @@ footer {
   left: 0;
   right: 0;
   width: 100%;
+  padding: 0;
+  margin: 0;
   height: fit-content;
   padding: 1rem;
   box-sizing: border-box;
@@ -112,6 +114,7 @@ footer {
 }
 
 .shabbat-title {
+  width: fit-content;
   font-weight: 600;
   padding: 0;
   margin: 0;
@@ -119,7 +122,8 @@ footer {
 
 #shabbat {
   max-width: 25ch;
-  margin: auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 #shabbat p {
   padding: 0;
@@ -216,18 +220,26 @@ ol li span {
   font-style: italic;
 }
 
-@media screen and (orientation: landscape) and (min-width: 820px) {
+@media screen and (min-width: 400px) {
+  article, .banner {
+    width: 400px;
+  }
+}
+@media screen and (min-width: 500px) {
+  article, .banner {
+    width: 500px;
+  }
+}
+@media screen and (orientation: landscape) and (min-width: 1000px) {
   body {
     display: flex;
     justify-content: center;
     align-items: start;
-    flex-direction: column;
     flex-direction: row;
   }
   .logo {
-    width: 25%;
+    width: fit-content;
     padding: 0 1rem;
-    height: 100vh;
     height: fit-content;
     border: none;
     position: sticky;
@@ -235,27 +247,18 @@ ol li span {
     top: 40px;
   }
   main {
-    width: 50%;
+    width: fit-content;
     border-left: 3px solid #B8B781;
     border-right: 3px solid #B8B781;
   }
   footer {
-    width: 25%;
+    width: fit-content;
     padding: 0 1rem;
-    height: 100vh;
     height: fit-content;
     border: none;
     position: sticky;
     margin: 0 auto;
     top: 40px;
-  }
-}
-@media screen and (min-width: 1000px) {
-  article, .banner {
-    width: 400px;
-  }
-  .logo img {
-    height: 120px;
   }
 }
 

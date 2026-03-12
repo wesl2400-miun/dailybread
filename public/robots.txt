@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://wesl2400-miun.github.io/dailybread/

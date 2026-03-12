@@ -1,6 +1,7 @@
 import { CONTENT } from "../data/content.js";
 import { DEFAULT } from "../../logic/refs/default.js";
 import { checkbox, fieldset, form, paragraph, submitBtn, textfield } from "../utils/element.js";
+import { VIEW_ID } from "../refs/view-id.js";
 
 export class LocCard {
   constructor(parent) {
@@ -8,11 +9,13 @@ export class LocCard {
       CONTENT.LOC_CARD.TITLE, null);
     this._form = form(root);
     this._cityField = textfield(
+      VIEW_ID.CITY_FIELD,
       this._form, 
       DEFAULT.CITY, 
       CONTENT.LOC_CARD.CITY);
     this._errTag = paragraph(this._form, '');
-    this._saveCheck = checkbox(this._form, 
+    this._saveCheck = checkbox(
+      VIEW_ID.SAVE_CHECK, this._form, 
       CONTENT.LOC_CARD.SAVE);
     submitBtn(this._form, 
       CONTENT.LOC_CARD.SUBMIT);

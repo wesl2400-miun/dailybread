@@ -49,19 +49,26 @@ export const form = (parent) => {
   return form;
 }
 
-export const textfield = (parent, placeHolder, label) => {
-  newNode('label', parent, label, null);
+const accesify = (id, input, label) => {
+  input.id = id;
+  label.htmlFor = id;
+}
+
+export const textfield = (id, parent, placeHolder, title) => {
+  const label = newNode('label', parent, title, null);
   const input = newNode('input', parent, null, null);
+  accesify(id, input, label);
   input.required = true;
   input.autocomplete = 'on';
   input.placeholder = placeHolder;
   return input;
 }
 
-export const checkbox = (parent, label) => {
+export const checkbox = (id, parent, title) => {
   const input = newNode('input', parent, null, null);
   input.type = 'checkbox';
-  newNode('label', parent, label, null);
+  const label = newNode('label', parent, title, null);
+  accesify(id, input, label);
   return input;
 }
 

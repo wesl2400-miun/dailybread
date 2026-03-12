@@ -28,7 +28,7 @@ export class App {
         pView.wire(this.refresh, bible);
         const shabView = new ShabView(this._footer);
         shabView.refresh(shabbat);
-        element(VIEW_ID.APP).scrollIntoView();
+        element(VIEW_ID.START).scrollIntoView();
         break;
     }
   }

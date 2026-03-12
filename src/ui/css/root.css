@@ -1,5 +1,4 @@
-.flex-column, body, .logo, .banner, .gallery,
-.gallery picture, article, .checker label {
+.flex-column, body, .logo, .banner, .gallery, .gallery picture img, article, .checker label {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -79,12 +78,11 @@ main {
   background-color: #375486;
   color: #FFFFFF;
   padding: 1rem;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
-.gallery,
-.gallery picture {
-  margin: 0;
-  padding: 1rem;
+.gallery, .gallery picture img {
   padding: 0;
   margin: 0;
 }

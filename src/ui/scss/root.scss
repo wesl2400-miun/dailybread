@@ -47,13 +47,12 @@ main {
   background-color: colors.$brand-primary;
   color: colors.$brand-text-light;
   padding: 1rem;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
-.gallery,
-.gallery picture {
+.gallery, .gallery picture img {
   @extend .flex-column;
-  margin: 0;
-  padding: 1rem;
   @include layout.no-margins;
 }
 

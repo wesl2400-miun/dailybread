@@ -73,7 +73,9 @@ footer {
   width: 100%;
   height: fit-content;
   @extend .flex-column;
-  padding: 1rem 0;
+  margin: auto;
+  padding: 1rem;
+  box-sizing: border-box;
   text-align: center;
   border-top: 3px solid colors.$brand-accent;
   background-color: colors.$brand-background;

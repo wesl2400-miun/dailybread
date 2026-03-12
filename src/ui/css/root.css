@@ -76,7 +76,9 @@ footer {
   right: 0;
   width: 100%;
   height: fit-content;
-  padding: 1rem 0;
+  margin: auto;
+  padding: 1rem;
+  box-sizing: border-box;
   text-align: center;
   border-top: 3px solid #B8B781;
   background-color: #FFFFFF;

@@ -1,5 +1,5 @@
 .flex-column, body, header, section, .gallery,
-.gallery picture, article, footer {
+.gallery picture, article {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,7 +76,6 @@ footer {
   right: 0;
   width: 100%;
   height: fit-content;
-  margin: auto;
   padding: 1rem;
   box-sizing: border-box;
   text-align: center;
@@ -93,6 +92,7 @@ footer {
 
 #shabbat {
   max-width: 25ch;
+  margin: auto;
 }
 #shabbat p {
   padding: 0;

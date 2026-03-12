@@ -72,8 +72,6 @@ footer {
   right: 0;
   width: 100%;
   height: fit-content;
-  @extend .flex-column;
-  margin: auto;
   padding: 1rem;
   box-sizing: border-box;
   text-align: center;
@@ -89,7 +87,7 @@ footer {
 
 #shabbat {
   max-width: 25ch;
-
+  margin: auto;
   p {
     @include layout.no-margins;
   }

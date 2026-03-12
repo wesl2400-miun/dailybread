@@ -92,6 +92,7 @@ main {
   margin: 0;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
+  opacity: 0.9;
 }
 
 article {

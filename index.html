@@ -41,10 +41,14 @@
 
             <!-- Mobil -->
             <source
-              srcset="./src/ui/assets/jesus-320w.webp 1x, ./src/ui/assets/jesus-400w.webp 2x"
+              srcset="./src/ui/assets/jesus-320w.webp"
               type="image/webp">
 
-            <img fetchpriority="high" src="./src/ui/assets/jesus-320w.jpg" alt="Jesus stands in a synagogue and teaches Torah.">
+            <img 
+              fetchpriority="high" 
+              src="./src/ui/assets/jesus-320w.jpg" 
+              srcset="./src/ui/assets/jesus-320w.jpg 1x, ./src/ui/assets/jesus-400w.jpg 2x"
+              alt="Jesus stands in a synagogue and teaches Torah.">
           </picture>
         </div>
         <!-- Denna delen är alltid synlig för SEO:s skull så att appens nyckelord kan hittas av sökmotorer -->

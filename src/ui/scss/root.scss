@@ -30,11 +30,11 @@ main {
   height: fit-content;
   @include layout.flex(center, center, column);
   gap: 1rem;
-  padding-top: 0;
+  padding-top: 1rem;
   padding-left: 2rem;
   padding-right: 2rem;
   padding-bottom: 250px;
-  background-color: colors.$brand-primary-variant;
+  background-color: colors.$brand-surface;
   box-sizing: border-box;
 }
 
@@ -54,13 +54,16 @@ main {
 .gallery, .gallery picture img {
   @extend .flex-column;
   @include layout.no-margins;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }
 
 article {
   width: dimens.$main-w-mobile;
   @extend .flex-column;
   border-radius: 5px;
-  background-color: #D1DBFF;
+  background-color: colors.$brand-background;
+  box-shadow: 0px 2px 2px #7a7a7a;
   section {
     padding: 1rem;
   }

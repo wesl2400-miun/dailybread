@@ -12,7 +12,8 @@
   border: none;
 
   &:hover {
-    background: linear-gradient(#5e5924, #294587);
+    background: linear-gradient(#cdd3e1,#ffffff, #9bb0e1);
+    color: colors.$brand-secondary-variant;
   }
 }
 

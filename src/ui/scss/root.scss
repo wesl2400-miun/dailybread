@@ -103,7 +103,7 @@ h3 {
   font-size: 1.2rem;
 }
 
-@media screen and (min-width: 945px) {
+@media screen and (min-width: 1000px) {
   body {
     @include layout.flex(center, start, column);
     flex-direction: row;

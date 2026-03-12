@@ -1,0 +1,30 @@
+@use 'colors';
+@use 'font';
+
+.base-btn {
+  height: 40px;
+  @extend .font;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: colors.$brand-text-light;
+  background: linear-gradient(colors.$brand-primary, colors.$brand-secondary-variant);
+  box-shadow: 0px 3px 5px #313131;
+  border: none;
+
+  &:hover {
+    background: linear-gradient(#5e5924, #294587);
+  }
+}
+
+input[type=submit] {
+  width: 100%;
+  margin: 0;
+  margin-top: 1rem;
+  @extend .base-btn;
+}
+
+button {
+  width: 90%;
+  margin-bottom: 1rem;
+  @extend .base-btn;
+}

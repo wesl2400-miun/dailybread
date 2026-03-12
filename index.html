@@ -21,11 +21,11 @@
     <link rel="canonical" href="https://wesl2400-miun.github.io/dailybread">
   </head>
   <body>
-    <header>
+    <header class="logo">
       <img src="./src/ui/assets/logo.svg" height="100" alt="DailyBread Logo">  
     </header>
     <main>
-      <section>
+      <header class="banner">
         <div class="gallery">
           <picture>
             <!-- Dator -->
@@ -41,13 +41,12 @@
 
             <!-- Mobil -->
             <source
-              srcset="./src/ui/assets/jesus-320w.webp"
+              srcset="./src/ui/assets/jesus-280w.webp"
               type="image/webp">
 
             <img 
               fetchpriority="high" 
-              src="./src/ui/assets/jesus-320w.jpg" 
-              srcset="./src/ui/assets/jesus-320w.jpg 1x, ./src/ui/assets/jesus-400w.jpg 2x"
+              src="./src/ui/assets/jesus-280w.jpg" 
               alt="Jesus stands in a synagogue and teaches Torah.">
           </picture>
         </div>
@@ -56,7 +55,7 @@
           <h1>Messianic Prayer App</h1>
           <p>A personalized daily evangelical Christian prayer app for Messianic Jews and Gentiles.</p>
         </div>
-      </section>
+      </header>
 
       <!-- Här genereras kortvyerna dynamiskt -->
       <div id="app"></div>

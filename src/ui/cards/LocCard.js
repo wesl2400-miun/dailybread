@@ -13,7 +13,7 @@ export class LocCard {
       this._form, 
       DEFAULT.CITY, 
       CONTENT.LOC_CARD.CITY);
-    this._errTag = paragraph(this._form, '');
+    this._errTag = paragraph(this._form, '', 'error');
     this._saveCheck = checkbox(
       VIEW_ID.SAVE_CHECK, this._form, 
       CONTENT.LOC_CARD.SAVE);

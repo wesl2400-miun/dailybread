@@ -1,6 +1,9 @@
 
 @use 'colors';
 @use 'layout';
+@use 'font';
+@use 'dimens';
+@use 'button';
 
 body {
   width: 100vw;
@@ -10,13 +13,10 @@ body {
   background-color: colors.$brand-background;
   color: colors.$brand-text-dark;
   font-size: 18px;
-  font-family: "Public Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
+  @extend .font;
 }
 
-header {
+.logo {
   width: 100%;
   @extend .flex-column;
   margin: 0;
@@ -26,9 +26,8 @@ header {
 }
 
 main {
-  width: 320px;
+  width: 100%;
   height: fit-content;
-  max-width: 50ch;
   @include layout.flex(start, center, column);
   gap: 1rem;
   padding-top: 0;
@@ -36,10 +35,11 @@ main {
   padding-right: 2rem;
   padding-bottom: 250px;
   background-color: colors.$brand-primary-variant;
+  box-sizing: border-box;
 }
 
-section {
-  width: 100%;
+.banner {
+  width: dimens.$main-w-mobile;
   @extend .flex-column;
 }
 
@@ -58,11 +58,14 @@ section {
 }
 
 article {
-  width: 285px;
+  width: dimens.$main-w-mobile;
   @extend .flex-column;
   border-radius: 5px;
-  padding: 1rem;
   background-color: colors.$brand-background;
+
+  section {
+    padding: 1rem;
+  }
 }
 
 footer {
@@ -77,7 +80,7 @@ footer {
   text-align: center;
   border-top: 3px solid colors.$brand-accent;
   background-color: colors.$brand-background;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .shabbat-title {
@@ -105,17 +108,88 @@ h3 {
   font-size: 1.2rem;
 }
 
+fieldset, form {
+  width: 100%;
+  @include layout.flex(center, start, column);
+  @include layout.no-margins;
+  box-sizing: border-box;
+}
+
+fieldset {
+  border: none;
+  padding: 1rem;
+}
+
+legend {
+  font-weight: 600;
+}
+
+input[type=text] {
+  padding: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  height: 40px;
+  border: 2px solid colors.$brand-primary;
+  border-radius: 5px;
+  color: colors.$brand-primary;
+  font-size: 18px;
+  @extend .font;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+.checker {
+  width: 100%;
+  @include layout.flex('start', 'center', 'row');
+  @include layout.no-margins;
+  box-sizing: border-box;
+  gap: 0.5rem;
+
+  label {
+    @include layout.no-margins;
+    @extend .flex-column;
+  }
+
+  input[type=checkbox] {
+    @include layout.no-margins;
+    width: 30px;
+    height: 30px;
+    accent-color: colors.$brand-primary;
+  }
+}
+
+.error {
+  color: colors.$brand-text-error;
+}
+
+ol {
+  width: 100%;
+  list-style: none;
+  @include layout.no-margins;
+  box-sizing: border-box;
+
+  li {
+    @include layout.flex('center', 'center', row);
+
+    span {
+      font-size: 0.8rem;
+      font-style: italic;
+    }
+  }
+}
+
 @media screen and (orientation: landscape) and (min-width: 820px) {
   body {
     @include layout.flex(center, start, column);
     flex-direction: row;
   }
 
-  header {
+  .logo {
     @include layout.desktop;
   }
 
   main {
+    width: 50%;
     border-left: 3px solid colors.$brand-accent;
     border-right: 3px solid colors.$brand-accent;
   }
@@ -127,15 +201,11 @@ h3 {
 
 
 @media screen and (min-width: 1000px) {
-  main {
-    width: 400px;
+  article, .banner {
+    width: dimens.$main-w-desktop;
   }
 
-  article {
-    width: 370px;
-  }
-
-  header img {
+  .logo img {
     height: 120px;
   }
 }

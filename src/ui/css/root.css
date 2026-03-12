@@ -1,9 +1,40 @@
-.flex-column, body, header, section, .gallery,
-.gallery picture, article {
+.flex-column, body, .logo, .banner, .gallery,
+.gallery picture, article, .checker label {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.font, body, input[type=text], .base-btn, input[type=submit], button {
+  font-family: "Public Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.base-btn, button, input[type=submit] {
+  height: 40px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  background: linear-gradient(#375486, #1A263B);
+  box-shadow: 0px 3px 5px #313131;
+  border: none;
+}
+.base-btn:hover, button:hover, input[type=submit]:hover {
+  background: linear-gradient(#5e5924, #294587);
+}
+
+input[type=submit] {
+  width: 100%;
+  margin: 0;
+  margin-top: 1rem;
+}
+
+button {
+  width: 90%;
+  margin-bottom: 1rem;
 }
 
 body {
@@ -14,13 +45,9 @@ body {
   background-color: #FFFFFF;
   color: #3B3B3B;
   font-size: 18px;
-  font-family: "Public Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
 }
 
-header {
+.logo {
   width: 100%;
   margin: 0;
   padding: 1rem 0;
@@ -29,9 +56,8 @@ header {
 }
 
 main {
-  width: 320px;
+  width: 100%;
   height: fit-content;
-  max-width: 50ch;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -42,10 +68,11 @@ main {
   padding-right: 2rem;
   padding-bottom: 250px;
   background-color: #D7D699;
+  box-sizing: border-box;
 }
 
-section {
-  width: 100%;
+.banner {
+  width: 280px;
 }
 
 .intro {
@@ -63,10 +90,12 @@ section {
 }
 
 article {
-  width: 285px;
+  width: 280px;
   border-radius: 5px;
-  padding: 1rem;
   background-color: #FFFFFF;
+}
+article section {
+  padding: 1rem;
 }
 
 footer {
@@ -81,7 +110,7 @@ footer {
   text-align: center;
   border-top: 3px solid #B8B781;
   background-color: #FFFFFF;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .shabbat-title {
@@ -111,6 +140,84 @@ h3 {
   font-size: 1.2rem;
 }
 
+fieldset, form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+fieldset {
+  border: none;
+  padding: 1rem;
+}
+
+legend {
+  font-weight: 600;
+}
+
+input[type=text] {
+  padding: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  height: 40px;
+  border: 2px solid #375486;
+  border-radius: 5px;
+  color: #375486;
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+.checker {
+  width: 100%;
+  display: flex;
+  justify-content: "start";
+  align-items: "center";
+  flex-direction: "row";
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  gap: 0.5rem;
+}
+.checker label {
+  padding: 0;
+  margin: 0;
+}
+.checker input[type=checkbox] {
+  padding: 0;
+  margin: 0;
+  width: 30px;
+  height: 30px;
+  accent-color: #375486;
+}
+
+.error {
+  color: #B00306;
+}
+
+ol {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+ol li {
+  display: flex;
+  justify-content: "center";
+  align-items: "center";
+  flex-direction: row;
+}
+ol li span {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
 @media screen and (orientation: landscape) and (min-width: 820px) {
   body {
     display: flex;
@@ -119,8 +226,8 @@ h3 {
     flex-direction: column;
     flex-direction: row;
   }
-  header {
-    width: fit-content;
+  .logo {
+    width: 25%;
     padding: 0 1rem;
     height: 100vh;
     height: fit-content;
@@ -130,11 +237,12 @@ h3 {
     top: 40px;
   }
   main {
+    width: 50%;
     border-left: 3px solid #B8B781;
     border-right: 3px solid #B8B781;
   }
   footer {
-    width: fit-content;
+    width: 25%;
     padding: 0 1rem;
     height: 100vh;
     height: fit-content;
@@ -145,13 +253,10 @@ h3 {
   }
 }
 @media screen and (min-width: 1000px) {
-  main {
+  article, .banner {
     width: 400px;
   }
-  article {
-    width: 370px;
-  }
-  header img {
+  .logo img {
     height: 120px;
   }
 }

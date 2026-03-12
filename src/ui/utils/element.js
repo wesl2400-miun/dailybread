@@ -13,8 +13,8 @@ export const heading = (parent, level, text) => {
   return newNode(`h${level}`, parent, text, null);
 }
 
-export const paragraph = (parent, text) => {
-  return newNode('p', parent, text, null);
+export const paragraph = (parent, text, style = null) => {
+  return newNode('p', parent, text, style);
 }
 
 export const span = (parent, text) => {
@@ -59,15 +59,17 @@ export const textfield = (id, parent, placeHolder, title) => {
   const input = newNode('input', parent, null, null);
   accesify(id, input, label);
   input.required = true;
+  input.type = 'text';
   input.autocomplete = 'on';
   input.placeholder = placeHolder;
   return input;
 }
 
 export const checkbox = (id, parent, title) => {
-  const input = newNode('input', parent, null, null);
+  const checker = newNode('div', parent, null, 'checker')
+  const input = newNode('input', checker, null, null);
   input.type = 'checkbox';
-  const label = newNode('label', parent, title, null);
+  const label = newNode('label', checker, title, null);
   accesify(id, input, label);
   return input;
 }

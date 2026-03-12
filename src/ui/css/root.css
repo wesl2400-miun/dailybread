@@ -108,7 +108,15 @@ h3 {
   font-size: 1.2rem;
 }
 
-@media screen and (min-width: 945px) {
+@media screen and (min-width: 1000px) {
+  main {
+    width: 400px;
+  }
+  article {
+    width: 370px;
+  }
+}
+@media screen and (min-width: 1000px), (orientation: landscape) {
   body {
     display: flex;
     justify-content: center;
@@ -130,13 +138,9 @@ h3 {
     height: 120px;
   }
   main {
-    width: 400px;
     border-left: 3px solid #B8B781;
     border-right: 3px solid #B8B781;
     background-color: #D7D699;
-  }
-  article {
-    width: 370px;
   }
   footer {
     width: 25%;

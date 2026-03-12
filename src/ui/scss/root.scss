@@ -104,6 +104,17 @@ h3 {
 }
 
 @media screen and (min-width: 1000px) {
+  main {
+    width: 400px;
+  }
+  
+  article {
+    width: 370px;
+  }
+}
+
+@media screen and (min-width: 1000px), 
+(orientation: landscape) {
   body {
     @include layout.flex(center, start, column);
     flex-direction: row;
@@ -119,14 +130,9 @@ h3 {
   }
 
   main {
-    width: 400px;
     border-left: 3px solid colors.$brand-accent;
     border-right: 3px solid colors.$brand-accent;
     background-color: colors.$brand-primary-variant;
-  }
-
-  article {
-    width: 370px;
   }
 
   footer {

@@ -84,3 +84,13 @@ export const submitBtn = (parent, title) => {
 export const button = (parent, title) => {
   return newNode('button', parent, title, null);
 }
+
+export const progbar = (parent) => {
+  const wrapper = newNode('div', 
+    parent, null, 'progbar');
+  return {
+    bar: wrapper,
+    prog: newNode('div', wrapper, 
+    null, 'progress')
+  }
+}

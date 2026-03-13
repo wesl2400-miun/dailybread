@@ -3,6 +3,8 @@
 @use 'layout';
 @use 'font';
 @use 'button';
+@use 'motion';
+@use 'progbar';
 
 body {
   width: 100vw;
@@ -210,6 +212,7 @@ ol {
 }
 
 @media screen and (min-width: 1200px) {
+
   body {
     @include layout.flex(center, start, row);
   }
@@ -217,7 +220,7 @@ ol {
   .logo {
     @include layout.desktop;
   }
-
+  
   main {
     width: fit-content;
     border-left: 3px solid colors.$brand-primary;

@@ -6,7 +6,7 @@ import { SCREEN } from "../refs/screen.js";
 
 export class PrayView {
   constructor(parent) {
-    this._root = article(parent, null);
+    this._root = article(parent, 'show');
   }
 
   _showField = (field, bible) => {

@@ -48,3 +48,19 @@ export const cityNotFound = (userCity, apiCity) => {
   if(invalidCity) return true;
   else return false;
 }
+
+export const progress = (prog, action) => {
+  let step = 0;
+  const increase = (intId) => {
+    if(step === 100) {
+      clearInterval(intId);
+      action();
+    }
+    step += 1;
+    prog.style.width = `${step}%`;
+  }
+
+  const intId = setInterval(() => {
+    increase(intId)
+  }, 0.5);
+}

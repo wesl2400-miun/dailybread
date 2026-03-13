@@ -1,6 +1,6 @@
 import { CONTENT } from "../data/content.js";
 import { DEFAULT } from "../../logic/refs/default.js";
-import { checkbox, fieldset, form, paragraph, submitBtn, textfield } from "../utils/element.js";
+import { checkbox, fieldset, form, paragraph, progbar, submitBtn, textfield } from "../utils/element.js";
 import { VIEW_ID } from "../refs/view-id.js";
 
 export class LocCard {
@@ -17,6 +17,7 @@ export class LocCard {
     this._saveCheck = checkbox(
       VIEW_ID.SAVE_CHECK, this._form, 
       CONTENT.LOC_CARD.SAVE);
+    this._progbar = progbar(this._form);
     submitBtn(this._form, 
       CONTENT.LOC_CARD.SUBMIT);
   }
@@ -26,7 +27,8 @@ export class LocCard {
       form: this._form,
       errTag: this._errTag,
       cityField: this._cityField,
-      saveCheck: this._saveCheck
+      saveCheck: this._saveCheck,
+      progbar: this._progbar
     }
   }
 }

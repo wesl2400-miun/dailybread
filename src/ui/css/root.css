@@ -26,6 +26,7 @@
   background: linear-gradient(#202F49, #375486, #202F49);
   box-shadow: 0px 3px 5px #313131;
   border: none;
+  cursor: pointer;
 }
 .base-btn:hover, button:hover, input[type=submit]:hover {
   background: linear-gradient(#BAC1C4, #FFFFFF, #BAC1C4);
@@ -41,6 +42,46 @@ input[type=submit] {
 button {
   width: 90%;
   margin-bottom: 1rem;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes hide {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.show {
+  animation: show 2s ease-in-out;
+}
+
+.hide {
+  animation: hide 2s ease-in-out;
+}
+
+.base-progbar, .progress, .progbar {
+  height: 30px;
+  border-radius: 5px;
+}
+
+.progbar {
+  width: 100%;
+  background-color: #BAC1C4;
+  margin-top: 1rem;
+}
+
+.progress {
+  width: 0;
+  background: #5986d5;
 }
 
 body {

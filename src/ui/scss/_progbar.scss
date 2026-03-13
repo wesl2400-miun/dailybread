@@ -1,0 +1,19 @@
+@use 'colors';
+
+.base-progbar {
+  height: 30px;
+  border-radius: 5px;
+}
+
+.progbar {
+  width: 100%;
+  @extend .base-progbar;
+  background-color: colors.$brand-secondary-variant;
+  margin-top: 1rem;
+}
+
+.progress {
+  width: 0;
+  @extend .base-progbar;
+  background: colors.$brand-progess;
+}

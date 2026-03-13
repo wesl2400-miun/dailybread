@@ -7,6 +7,7 @@ import { load, save } from "../../logic/utils/utils.js";
 import { STORAGE } from "../../logic/refs/storage.js";
 import { GetLocation } from "../../logic/features/minor/GetLocation.js";
 import { pickPrayer } from "../../logic/features/major/pick-prayer.js";
+import { progress } from "../../logic/utils/utils.js";
 
 export class LocView {
   constructor(parent) {
@@ -42,7 +43,7 @@ export class LocView {
 
   _onSubmit = async (refresh) => {
     const { errTag, cityField, 
-      saveCheck } = this._locCard.fields();
+      saveCheck, progbar } = this._locCard.fields();
     const getLoc = new GetLocation(
         cityField.value);
     const location 
@@ -58,6 +59,11 @@ export class LocView {
     }
     const { bible, 
       shabbat } = await pickPrayer(location);
-    refresh(SCREEN.PRAYER, bible, shabbat);
+
+    const { bar, prog } = progbar;
+    bar.style.display = 'block';
+    progress(prog, () => {
+      refresh(SCREEN.PRAYER, bible, shabbat);
+    });
   }
 }

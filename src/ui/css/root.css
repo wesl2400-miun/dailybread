@@ -74,6 +74,7 @@ button {
 }
 
 .progbar {
+  display: none;
   width: 100%;
   background-color: #BAC1C4;
   margin-top: 1rem;

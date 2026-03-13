@@ -6,7 +6,7 @@
 }
 
 .progbar {
-  display: flex;
+  display: none;
   width: 100%;
   @extend .base-progbar;
   background-color: colors.$brand-secondary-variant;

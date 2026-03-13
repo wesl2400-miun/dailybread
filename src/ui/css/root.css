@@ -1,8 +1,14 @@
-.flex-column, body, .logo, .banner, .gallery, .gallery picture img, article, footer, #shabbat, .checker label {
+.flex-column, body, .logo, .banner, .gallery, .gallery img, article, footer, #shabbat, .checker label {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.card-width, .banner, .intro, .gallery, .gallery img, article {
+  width: 100%;
+  max-width: 500px;
+  min-width: 320px;
 }
 
 .font, body, input[type=text], .base-btn, input[type=submit], button {
@@ -17,12 +23,13 @@
   font-size: 1.2rem;
   font-weight: 600;
   color: #FFFFFF;
-  background: linear-gradient(#375486, #1A263B);
+  background: linear-gradient(#202F49, #375486, #202F49);
   box-shadow: 0px 3px 5px #313131;
   border: none;
 }
 .base-btn:hover, button:hover, input[type=submit]:hover {
-  background: #375486;
+  background: linear-gradient(#BAC1C4, #FFFFFF, #BAC1C4);
+  color: #2E2E2E;
 }
 
 input[type=submit] {
@@ -42,7 +49,7 @@ body {
   padding: 0;
   margin: 0;
   background-color: #FFFFFF;
-  color: #3B3B3B;
+  color: #2E2E2E;
   font-size: 18px;
 }
 
@@ -68,38 +75,36 @@ main {
   padding-left: 2rem;
   padding-right: 2rem;
   padding-bottom: 250px;
-  background-color: #dcdcdc;
+  background-color: #EDEDED;
   box-sizing: border-box;
 }
 
 .banner {
-  width: 320px;
-  border-radius: 5px;
-  box-shadow: 0px 2px 2px #414144;
-  border: 1px solid #d3d3d3;
+  box-sizing: border-box;
+  gap: 1rem;
 }
 
 .intro {
   background-color: #375486;
   color: #FFFFFF;
   padding: 1rem;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 
-.gallery, .gallery picture img {
-  padding: 0;
-  margin: 0;
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
+.gallery {
+  background-color: #FFFFFF;
+  border: 3px solid #375486;
+}
+
+.gallery img {
+  padding: 2rem 0;
 }
 
 article {
-  width: 320px;
   border-radius: 5px;
   background-color: #FFFFFF;
-  box-shadow: 0px 2px 2px #7a7a7a;
-  border: 1px solid #d3d3d3;
+  border: 3px solid #375486;
 }
 article section {
   padding: 1rem;
@@ -125,15 +130,15 @@ footer {
 
 .shabbat-title {
   width: fit-content;
-  font-weight: 600;
+  font-weight: 800;
   padding: 0;
   margin: 0;
 }
 
 #shabbat {
-  max-width: 25ch;
-  width: 100%;
+  max-width: 30ch;
   box-sizing: border-box;
+  font-weight: 500;
 }
 #shabbat p {
   padding: 0;
@@ -230,17 +235,18 @@ ol li span {
   font-style: italic;
 }
 
-@media screen and (min-width: 400px) {
-  article, .banner {
-    width: 400px;
+@media screen and (max-height: 600px) {
+  .logo, footer {
+    position: static;
+  }
+  .logo img {
+    height: 50px;
+  }
+  main {
+    padding-bottom: 2rem;
   }
 }
-@media screen and (min-width: 500px) {
-  article, .banner {
-    width: 500px;
-  }
-}
-@media screen and (orientation: landscape) and (min-width: 1000px) {
+@media screen and (min-width: 1200px) {
   body {
     display: flex;
     justify-content: center;

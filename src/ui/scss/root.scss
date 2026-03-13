@@ -2,7 +2,6 @@
 @use 'colors';
 @use 'layout';
 @use 'font';
-@use 'dimens';
 @use 'button';
 
 body {
@@ -10,7 +9,7 @@ body {
   height: 100%;
   @extend .flex-column;
   @include layout.no-margins;
-  background-color: colors.$brand-background;
+  background-color: colors.$brand-primary-variant;
   color: colors.$brand-text-dark;
   font-size: 18px;
   @extend .font;
@@ -23,8 +22,8 @@ body {
   @extend .flex-column;
   margin: 0;
   padding: 1rem 0;
-  border-bottom: 3px solid colors.$brand-accent;
-  background-color: colors.$brand-background;
+  border-bottom: 3px solid colors.$brand-primary;
+  background-color: colors.$brand-primary-variant;
 }
 
 main {
@@ -36,40 +35,45 @@ main {
   padding-left: 2rem;
   padding-right: 2rem;
   padding-bottom: 250px;
-  background-color: colors.$brand-surface;
+  background-color: colors.$brand-background;
   box-sizing: border-box;
 }
 
 .banner {
-  width: dimens.$main-w-mobile;
+  @extend .card-width;
   @extend .flex-column;
-  border-radius: 5px;
-  box-shadow: 0px 2px 2px #414144;
-  border: 1px solid colors.$brand-primary-variant;
+  box-sizing: border-box;
+  gap: 1rem;
 }
 
 .intro {
+  @extend .card-width;
   background-color: colors.$brand-primary;
   color: colors.$brand-text-light;
   padding: 1rem;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 
-.gallery, .gallery picture img {
+.gallery {
+  @extend .card-width;
   @extend .flex-column;
-  @include layout.no-margins;
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
+  background-color: colors.$brand-primary-variant;
+  border: 3px solid colors.$brand-primary;
+}
+
+.gallery img {
+  @extend .card-width;
+  @extend .flex-column;
+  padding: 2rem 0;
 }
 
 article {
-  width: dimens.$main-w-mobile;
+  @extend .card-width;
   @extend .flex-column;
   border-radius: 5px;
-  background-color: colors.$brand-background;
-  box-shadow: 0px 2px 2px #7a7a7a;
-  border: 1px solid colors.$brand-primary-variant;
+  background-color: colors.$brand-primary-variant;
+  border: 3px solid colors.$brand-primary;
   section {
     padding: 1rem;
   }
@@ -87,23 +91,23 @@ footer {
   padding: 1rem;
   box-sizing: border-box;
   text-align: center;
-  border-top: 3px solid colors.$brand-accent;
-  background-color: colors.$brand-background;
+  border-top: 3px solid colors.$brand-primary;
+  background-color: colors.$brand-primary-variant;
   font-size: 0.9rem;
   color: colors.$brand-primary;
 }
 
 .shabbat-title {
   width: fit-content;
-  font-weight: 600;
+  font-weight: 800;
   @include layout.no-margins;
 }
 
 #shabbat {
-  max-width: 25ch;
-  width: 100%;
+  max-width: 30ch;
   @extend .flex-column;
   box-sizing: border-box;
+  font-weight: 500;
   p {
     @include layout.no-margins;
   }
@@ -191,19 +195,21 @@ ol {
   }
 }
 
-@media screen and (min-width: 400px) {
-  article, .banner {
-    width: dimens.$main-w-tablet;
+@media screen and (max-height: 600px) {
+  .logo, footer {
+    position: static;
+  }
+
+  .logo img {
+    height: 50px;
+  }
+
+  main {
+    padding-bottom: 2rem;
   }
 }
 
-@media screen and (min-width: 500px) {
-  article, .banner {
-    width: dimens.$main-w-desktop;
-  }
-}
-
-@media screen and (orientation: landscape) and (min-width: 1000px) {
+@media screen and (min-width: 1200px) {
   body {
     @include layout.flex(center, start, row);
   }
@@ -214,8 +220,8 @@ ol {
 
   main {
     width: fit-content;
-    border-left: 3px solid colors.$brand-accent;
-    border-right: 3px solid colors.$brand-accent;
+    border-left: 3px solid colors.$brand-primary;
+    border-right: 3px solid colors.$brand-primary;
   }
 
   footer {
@@ -223,5 +229,6 @@ ol {
     @include layout.desktop;
   }
 }
+
 
 

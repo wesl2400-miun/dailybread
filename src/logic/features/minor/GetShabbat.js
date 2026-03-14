@@ -1,5 +1,5 @@
 import { Shabbat } from "../../models/Shabbat.js";
-import { emptyStr, query } from "../../utils/utils.js";
+import { query } from "../../utils/utils.js";
 import { API } from "../../refs/api.js";
 
 export class GetShabbat {
@@ -15,7 +15,6 @@ export class GetShabbat {
       items, 'havdalah');
     const countdown = await 
       this._countdown(start.day);
-    if(emptyStr(countdown)) return null; 
     return new Shabbat(city,
       `${start.title} ${start.day}`,
       `${end.title} ${end.day}`,

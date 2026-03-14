@@ -20,6 +20,8 @@
     BACK_BTN: 'START OVER'
   }),
   SHAB_VIEW: Object.freeze({
+    ERROR: "Shabbat times for your location are temporary unavailable.",
+    CURRENT: "Shabbat Shalom! Enjoy your rest.",
     TODAY: 'Today is Shabbat! Enjoy your rest.',
     daysLeft: (countdown) => `${countdown} days until Shabbat.`,
     times: (city) => `Times apply to ${city}.`

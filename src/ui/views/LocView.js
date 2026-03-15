@@ -7,7 +7,6 @@ import { load, save } from "../../logic/utils/utils.js";
 import { STORAGE } from "../../logic/refs/storage.js";
 import { GetLocation } from "../../logic/features/minor/GetLocation.js";
 import { pickPrayer } from "../../logic/features/major/pick-prayer.js";
-import { progress } from "../../logic/utils/utils.js";
 
 export class LocView {
   constructor(parent) {
@@ -57,13 +56,11 @@ export class LocView {
       save(STORAGE.CITY, 
         cityField.value);
     }
-    const { bible, 
-      shabbat } = await pickPrayer(location);
-
     const { bar, prog } = progbar;
-    bar.style.display = 'block';
-    progress(prog, () => {
-      refresh(SCREEN.PRAYER, bible, shabbat);
-    });
+    bar.style.display = 'block'; 
+    
+    const { bible, 
+      shabbat } = await pickPrayer(location, prog);
+    refresh(SCREEN.PRAYER, bible, shabbat);
   }
 }

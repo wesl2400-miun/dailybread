@@ -32,8 +32,10 @@ export class GetBible {
     const passages = [];
     verses.forEach(passage => {
       const { verse, text} = passage;
+      const holified = text
+        .replace('Yahweh', 'LORD');
       passages.push(new Passage(
-        verse, text));
+        verse, holified));
     });
     return new Scripture(
       reference, passages);

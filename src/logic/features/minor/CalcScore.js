@@ -1,11 +1,8 @@
 import { randOpt } from "../../utils/utils.js";
 import { EXCERPT } from "../../refs/excerpt.js";
 import { BIBLESET } from "../../refs/bibleset.js";
-import { WCODES } from "../../data/wcodes.js";
-import { LIBZONE } from "../../data/libzone.js";
-import { RISKZONE } from "../../data/riskzone.js";
-import { GENTILES } from "../../data/gentiles.js";
-import { SCEPTICS } from "../../data/sceptics.js";
+import { FORECAST } from "../../data/forecast.js";
+import { REGION } from "../../data/region.js";
 import { PSALMS } from "../../data/psalms.js";
 import { WISDOMS } from "../../data/wisdoms.js";
 import { Score } from "../../models/Score.js";
@@ -52,29 +49,21 @@ export class CalcScore {
 
   _calcWCode = (bibleset) => {
     const { code } = this._weather;
-    if(WCODES.SUN.includes(code)) {
+    if(FORECAST.GOOD.includes(code)) {
       bibleset.push(EXCERPT.PRAISE);
-    } else if(WCODES.CLOUDS.includes(code)) {
-      bibleset.push(EXCERPT.DEVOTION);
-    } else if(WCODES.RAIN.includes(code)) {
-      bibleset.push(EXCERPT.DOUBT);
-    } else if(WCODES.SNOW.includes(code)) {
-      bibleset.push(EXCERPT.GRUDGE);
-    } else if (WCODES.THUNDER.includes(code)) {
-      bibleset.push(EXCERPT.DESPAIR);
-    }
+    } else if(FORECAST.BAD.includes(code)) {
+      bibleset.push(EXCERPT.STRENGTH);
+    } else if(FORECAST.TERRIBLE.includes(code)) {
+      bibleset.push(EXCERPT.TRIAL);
+    } 
   }
 
   _calcTemp = (bibleset) => {
     const { temp } = this._weather;
-    if(temp <= 4) {
-      bibleset.push(EXCERPT.DESPAIR);
-    } else if (temp > 4 && temp <= 15) {
-      bibleset.push(EXCERPT.DEVOTION);
-    } else if(temp > 15 && temp <= 20) {
+    if(temp <= 4 && temp <= 15) {
+      bibleset.push(EXCERPT.STRENGTH);
+    } else if(temp > 15 && temp <= 25) {
       bibleset.push(EXCERPT.PRAISE);
-    } else if(temp > 20 && temp <= 25) {
-      bibleset.push(EXCERPT.DOUBT);
     } else if(temp > 25) {
       bibleset.push(EXCERPT.TRIAL);
     }
@@ -82,27 +71,23 @@ export class CalcScore {
 
   _calcRegion = (bibleset) => {
     const { region } = this._weather;
-    if(SCEPTICS.includes(region)) {
-      bibleset.push(EXCERPT.SCEPTICS);
-    } else if(GENTILES.includes(region)) {
-      bibleset.push(EXCERPT.GENTILES);
+    if(REGION.WEST.includes(region)) {
+      bibleset.push(EXCERPT.TRIAL);
+    } else if(REGION.EAST.includes(region)) {
+      bibleset.push(EXCERPT.PERSECUTION);
     } 
   }
 
   _calcCountry = (bibleset) => {
     const { country } = this._location;
     if(country === 'Israel') {
-      bibleset.push(EXCERPT.JEWS);
-    } else if(LIBZONE.includes(country)) {
-      bibleset.push(EXCERPT.TRIAL);
-    } else if(RISKZONE.includes(country)) {
-      bibleset.push(EXCERPT.PERSECUTION);
+      bibleset.push(EXCERPT.ISRAEL);
     }
   }
 
   _calcShab = (bibleset) => {
     const { countdown } = this._shabbat;
-    if(countdown !== 0) return;
-    bibleset.push(EXCERPT.SHABBAT);
+    if(countdown === 0)
+      bibleset.push(EXCERPT.SHABBAT);
   }
 }

@@ -1,10 +1,18 @@
 
-@use 'colors';
-@use 'layout';
-@use 'font';
-@use 'button';
-@use 'motion';
-@use 'progbar';
+@use './base/colors';
+@use './base/layout';
+@use './base/font';
+@use './component/button';
+@use './base/motion';
+@use './component/progbar';
+@use './config/config';
+@use './component/logo';
+@use './component/banner';
+@use './component/main';
+@use './component/card';
+@use './component/footer';
+@use './component/form';
+@use './component/list';
 
 body {
   width: 100vw;
@@ -17,221 +25,6 @@ body {
   @extend .font;
 }
 
-.logo {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  @extend .flex-column;
-  margin: 0;
-  padding: 1rem 0;
-  border-bottom: 3px solid colors.$brand-primary;
-  background-color: colors.$brand-primary-variant;
-}
-
-main {
-  width: 100%;
-  height: fit-content;
-  @include layout.flex(center, center, column);
-  gap: 1rem;
-  padding-top: 1rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-bottom: 250px;
-  background-color: colors.$brand-background;
-  box-sizing: border-box;
-}
-
-.banner {
-  @extend .card-width;
-  @extend .flex-column;
-  box-sizing: border-box;
-  gap: 1rem;
-}
-
-.intro {
-  @extend .card-width;
-  background-color: colors.$brand-primary;
-  color: colors.$brand-text-light;
-  padding: 1rem;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
-
-.gallery {
-  @extend .card-width;
-  @extend .flex-column;
-  background-color: colors.$brand-primary-variant;
-  border: 3px solid colors.$brand-primary;
-}
-
-.gallery img {
-  @extend .card-width;
-  @extend .flex-column;
-  padding: 2rem 0;
-}
-
-article {
-  @extend .card-width;
-  @extend .flex-column;
-  border-radius: 5px;
-  background-color: colors.$brand-primary-variant;
-  border: 3px solid colors.$brand-primary;
-  section {
-    padding: 1rem;
-  }
-}
-
-footer {
-  position: fixed;
-  bottom:0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  @extend .flex-column;
-  @include layout.no-margins;
-  height: fit-content;
-  padding: 1rem;
-  box-sizing: border-box;
-  text-align: center;
-  border-top: 3px solid colors.$brand-primary;
-  background-color: colors.$brand-primary-variant;
-  font-size: 0.9rem;
-  color: colors.$brand-primary;
-}
-
-.shabbat-title {
-  width: fit-content;
-  font-weight: 800;
-  @include layout.no-margins;
-}
-
-#shabbat {
-  max-width: 30ch;
-  @extend .flex-column;
-  box-sizing: border-box;
-  font-weight: 500;
-  p {
-    @include layout.no-margins;
-  }
-}
-
-h1 {
-  font-size: 1.7rem;
-}
-
-h2 {
-  font-size: 1.5rem;
-}
-
-h3 {
-  font-size: 1.2rem;
-}
-
-fieldset, form {
-  width: 100%;
-  @include layout.flex(center, start, column);
-  @include layout.no-margins;
-  box-sizing: border-box;
-}
-
-fieldset {
-  border: none;
-  padding: 1rem;
-}
-
-legend {
-  font-weight: 600;
-}
-
-input[type=text] {
-  padding: 0.5rem;
-  width: 100%;
-  box-sizing: border-box;
-  height: 40px;
-  border: 2px solid colors.$brand-primary;
-  border-radius: 5px;
-  color: colors.$brand-primary;
-  font-size: 18px;
-  @extend .font;
-  font-weight: 500;
-  margin-top: 0.5rem;
-}
-
-.checker {
-  width: 100%;
-  @include layout.flex('start', 'center', 'row');
-  @include layout.no-margins;
-  box-sizing: border-box;
-  gap: 0.5rem;
-
-  label {
-    @include layout.no-margins;
-    @extend .flex-column;
-  }
-
-  input[type=checkbox] {
-    @include layout.no-margins;
-    width: 30px;
-    height: 30px;
-    accent-color: colors.$brand-primary;
-  }
-}
-
-.error {
-  color: colors.$brand-text-error;
-}
-
-ol {
-  width: 100%;
-  list-style: none;
-  @include layout.no-margins;
-  box-sizing: border-box;
-
-  li {
-    @include layout.flex('center', 'center', row);
-
-    span {
-      font-size: 0.8rem;
-      font-style: italic;
-    }
-  }
-}
-
-@media screen and (max-height: 600px) {
-  .logo, footer {
-    position: static;
-  }
-
-  .logo img {
-    height: 50px;
-  }
-
-  main {
-    padding-bottom: 2rem;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-
-  body {
-    @include layout.flex(center, start, row);
-  }
-
-  .logo {
-    @include layout.desktop;
-  }
-  
-  main {
-    width: fit-content;
-    border-left: 3px solid colors.$brand-primary;
-    border-right: 3px solid colors.$brand-primary;
-  }
-
-  footer {
-    position: sticky;
-    @include layout.desktop;
-  }
-}
 
 
 

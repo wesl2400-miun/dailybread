@@ -33,7 +33,7 @@ export class GetBible {
     verses.forEach(passage => {
       const { verse, text} = passage;
       const holified = text
-        .replace('Yahweh', 'LORD');
+        .replaceAll(/Yahweh|Yah/g, 'LORD');
       passages.push(new Passage(
         verse, holified));
     });

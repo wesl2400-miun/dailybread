@@ -1,11 +1,11 @@
-.flex-column, body, .logo, .banner, .gallery, .gallery img, article, footer, #shabbat, .checker label {
+.flex-column, body, .checker label, footer, #shabbat, article, .banner, .gallery, .gallery img, .logo {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.card-width, .banner, .intro, .gallery, .gallery img, article {
+.card-width, article, .banner, .intro, .gallery, .gallery img {
   width: 100%;
   max-width: 500px;
   min-width: 320px;
@@ -52,20 +52,8 @@ button {
     opacity: 1;
   }
 }
-@keyframes hide {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
 .show {
   animation: show 2s ease-in-out;
-}
-
-.hide {
-  animation: hide 2s ease-in-out;
 }
 
 .base-progbar, .progress, .progbar {
@@ -85,16 +73,47 @@ button {
   background: #5986d5;
 }
 
-body {
-  width: 100vw;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  background-color: #FFFFFF;
-  color: #2E2E2E;
-  font-size: 18px;
+@media screen and (max-height: 600px) {
+  .logo, footer {
+    position: static;
+  }
+  .logo img {
+    height: 50px;
+  }
+  main {
+    padding-bottom: 2rem;
+  }
 }
-
+@media screen and (min-width: 1200px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: row;
+  }
+  .logo {
+    width: fit-content;
+    padding: 0 1rem;
+    height: fit-content;
+    border: none;
+    margin: 0 auto;
+    top: 40px;
+  }
+  main {
+    width: fit-content;
+    border-left: 3px solid #375486;
+    border-right: 3px solid #375486;
+  }
+  footer {
+    position: sticky;
+    width: fit-content;
+    padding: 0 1rem;
+    height: fit-content;
+    border: none;
+    margin: 0 auto;
+    top: 40px;
+  }
+}
 .logo {
   position: sticky;
   top: 0;
@@ -103,22 +122,6 @@ body {
   padding: 1rem 0;
   border-bottom: 3px solid #375486;
   background-color: #FFFFFF;
-}
-
-main {
-  width: 100%;
-  height: fit-content;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 1rem;
-  padding-top: 1rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-bottom: 250px;
-  background-color: #EDEDED;
-  box-sizing: border-box;
 }
 
 .banner {
@@ -141,6 +144,31 @@ main {
 
 .gallery img {
   padding: 2rem 0;
+}
+
+main {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 250px;
+  background-color: #EDEDED;
+  box-sizing: border-box;
+}
+main h1 {
+  font-size: 1.7rem;
+}
+main h2 {
+  font-size: 1.5rem;
+}
+main h3 {
+  font-size: 1.2rem;
 }
 
 article {
@@ -185,18 +213,6 @@ footer {
 #shabbat p {
   padding: 0;
   margin: 0;
-}
-
-h1 {
-  font-size: 1.7rem;
-}
-
-h2 {
-  font-size: 1.5rem;
-}
-
-h3 {
-  font-size: 1.2rem;
 }
 
 fieldset, form {
@@ -277,46 +293,14 @@ ol li span {
   font-style: italic;
 }
 
-@media screen and (max-height: 600px) {
-  .logo, footer {
-    position: static;
-  }
-  .logo img {
-    height: 50px;
-  }
-  main {
-    padding-bottom: 2rem;
-  }
-}
-@media screen and (min-width: 1200px) {
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    flex-direction: row;
-  }
-  .logo {
-    width: fit-content;
-    padding: 0 1rem;
-    height: fit-content;
-    border: none;
-    margin: 0 auto;
-    top: 40px;
-  }
-  main {
-    width: fit-content;
-    border-left: 3px solid #375486;
-    border-right: 3px solid #375486;
-  }
-  footer {
-    position: sticky;
-    width: fit-content;
-    padding: 0 1rem;
-    height: fit-content;
-    border: none;
-    margin: 0 auto;
-    top: 40px;
-  }
+body {
+  width: 100vw;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #FFFFFF;
+  color: #2E2E2E;
+  font-size: 18px;
 }
 
 /*# sourceMappingURL=root.css.map */

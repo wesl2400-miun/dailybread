@@ -1,0 +1,31 @@
+@use '../base/colors';
+@use '../base/layout';
+
+.banner {
+  @extend .card-width;
+  @extend .flex-column;
+  box-sizing: border-box;
+  gap: 1rem;
+}
+
+.intro {
+  @extend .card-width;
+  background-color: colors.$brand-primary;
+  color: colors.$brand-text-light;
+  padding: 1rem;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.gallery {
+  @extend .card-width;
+  @extend .flex-column;
+  background-color: colors.$brand-primary-variant;
+  border: 3px solid colors.$brand-primary;
+}
+
+.gallery img {
+  @extend .card-width;
+  @extend .flex-column;
+  padding: 2rem 0;
+}

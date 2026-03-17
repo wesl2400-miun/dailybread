@@ -1,0 +1,17 @@
+@use '../base/layout';
+
+ol {
+  width: 100%;
+  list-style: none;
+  @include layout.no-margins;
+  box-sizing: border-box;
+
+  li {
+    @include layout.flex('center', 'center', row);
+
+    span {
+      font-size: 0.8rem;
+      font-style: italic;
+    }
+  }
+}

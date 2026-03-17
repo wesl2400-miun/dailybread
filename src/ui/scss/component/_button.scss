@@ -1,5 +1,6 @@
-@use 'colors';
-@use 'font';
+@use '../base/colors';
+@use '../base/layout';
+@use '../base/font';
 
 .base-btn {
   height: 40px;

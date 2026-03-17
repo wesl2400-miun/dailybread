@@ -1,0 +1,29 @@
+@use '../base/colors';
+@use '../base/layout';
+
+main {
+  width: 100%;
+  height: fit-content;
+  @include layout.flex(center, center, column);
+  gap: 1rem;
+  padding-top: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 250px;
+  background-color: colors.$brand-background;
+  box-sizing: border-box;
+
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+}
+
+

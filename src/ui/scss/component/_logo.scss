@@ -1,0 +1,13 @@
+@use '../base/colors';
+@use '../base/layout';
+
+.logo {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  @extend .flex-column;
+  margin: 0;
+  padding: 1rem 0;
+  border-bottom: 3px solid colors.$brand-primary;
+  background-color: colors.$brand-primary-variant;
+}

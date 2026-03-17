@@ -1,0 +1,37 @@
+@use '../base/colors';
+@use '../base/layout';
+
+footer {
+  position: fixed;
+  bottom:0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  @extend .flex-column;
+  @include layout.no-margins;
+  height: fit-content;
+  padding: 1rem;
+  box-sizing: border-box;
+  text-align: center;
+  border-top: 3px solid colors.$brand-primary;
+  background-color: colors.$brand-primary-variant;
+  font-size: 0.9rem;
+  color: colors.$brand-primary;
+}
+
+.shabbat-title {
+  width: fit-content;
+  font-weight: 800;
+  @include layout.no-margins;
+}
+
+#shabbat {
+  max-width: 30ch;
+  @extend .flex-column;
+  box-sizing: border-box;
+  font-weight: 500;
+
+  p {
+    @include layout.no-margins;
+  }
+}

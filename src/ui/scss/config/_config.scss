@@ -1,0 +1,38 @@
+@use '../base/colors';
+@use '../base/layout';
+
+@media screen and (max-height: 600px) {
+  .logo, footer {
+    position: static;
+  }
+
+  .logo img {
+    height: 50px;
+  }
+
+  main {
+    padding-bottom: 2rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+
+  body {
+    @include layout.flex(center, start, row);
+  }
+
+  .logo {
+    @include layout.desktop;
+  }
+  
+  main {
+    width: fit-content;
+    border-left: 3px solid colors.$brand-primary;
+    border-right: 3px solid colors.$brand-primary;
+  }
+
+  footer {
+    position: sticky;
+    @include layout.desktop;
+  }
+}

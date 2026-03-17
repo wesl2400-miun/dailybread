@@ -1,0 +1,13 @@
+@use '../base/colors';
+@use '../base/layout';
+
+article {
+  @extend .card-width;
+  @extend .flex-column;
+  border-radius: 5px;
+  background-color: colors.$brand-primary-variant;
+  border: 3px solid colors.$brand-primary;
+  section {
+    padding: 1rem;
+  }
+}

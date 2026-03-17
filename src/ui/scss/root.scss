@@ -5,7 +5,6 @@
 @use './component/button';
 @use './base/motion';
 @use './component/progbar';
-@use './config/config';
 @use './component/logo';
 @use './component/banner';
 @use './component/main';
@@ -13,6 +12,7 @@
 @use './component/footer';
 @use './component/form';
 @use './component/list';
+@use './config/config';
 
 body {
   width: 100vw;

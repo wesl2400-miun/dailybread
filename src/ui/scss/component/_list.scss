@@ -7,7 +7,7 @@ ol {
   box-sizing: border-box;
 
   li {
-    @include layout.flex('center', 'center', row);
+    @include layout.flex(center, center, row);
 
     span {
       font-size: 0.8rem;

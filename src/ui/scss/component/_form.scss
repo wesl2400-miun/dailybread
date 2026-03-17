@@ -34,7 +34,7 @@ input[type='text'] {
 
 .checker {
   width: 100%;
-  @include layout.flex('start', 'center', 'row');
+  @include layout.flex(start, center, row);
   @include layout.no-margins;
   box-sizing: border-box;
   gap: 0.5rem;

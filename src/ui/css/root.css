@@ -1,4 +1,4 @@
-.flex-column, body, .checker label, footer, #shabbat, article, .banner, .gallery, .gallery img, .logo {
+.flex-column, body, .checker label, footer, #shabbat, article, main, .banner, .gallery, .gallery img, .logo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,47 +73,6 @@ button {
   background: #5986d5;
 }
 
-@media screen and (max-height: 600px) {
-  .logo, footer {
-    position: static;
-  }
-  .logo img {
-    height: 50px;
-  }
-  main {
-    padding-bottom: 2rem;
-  }
-}
-@media screen and (min-width: 1200px) {
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    flex-direction: row;
-  }
-  .logo {
-    width: fit-content;
-    padding: 0 1rem;
-    height: fit-content;
-    border: none;
-    margin: 0 auto;
-    top: 40px;
-  }
-  main {
-    width: fit-content;
-    border-left: 3px solid #375486;
-    border-right: 3px solid #375486;
-  }
-  footer {
-    position: sticky;
-    width: fit-content;
-    padding: 0 1rem;
-    height: fit-content;
-    border: none;
-    margin: 0 auto;
-    top: 40px;
-  }
-}
 .logo {
   position: sticky;
   top: 0;
@@ -149,10 +108,6 @@ button {
 main {
   width: 100%;
   height: fit-content;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   gap: 1rem;
   padding-top: 1rem;
   padding-left: 2rem;
@@ -251,9 +206,9 @@ input[type=text] {
 .checker {
   width: 100%;
   display: flex;
-  justify-content: "start";
-  align-items: "center";
-  flex-direction: "row";
+  justify-content: start;
+  align-items: center;
+  flex-direction: row;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -284,8 +239,8 @@ ol {
 }
 ol li {
   display: flex;
-  justify-content: "center";
-  align-items: "center";
+  justify-content: center;
+  align-items: center;
   flex-direction: row;
 }
 ol li span {
@@ -293,6 +248,47 @@ ol li span {
   font-style: italic;
 }
 
+@media screen and (max-height: 600px) {
+  .logo, footer {
+    position: static;
+  }
+  .logo img {
+    height: 50px;
+  }
+  main {
+    padding-bottom: 2rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: row;
+  }
+  .logo {
+    width: fit-content;
+    padding: 0 1rem;
+    height: fit-content;
+    border: none;
+    margin: 0 auto;
+    top: 40px;
+  }
+  main {
+    width: fit-content;
+    border-left: 3px solid #375486;
+    border-right: 3px solid #375486;
+  }
+  footer {
+    position: sticky;
+    width: fit-content;
+    padding: 0 1rem;
+    height: fit-content;
+    border: none;
+    margin: 0 auto;
+    top: 40px;
+  }
+}
 body {
   width: 100vw;
   height: 100%;

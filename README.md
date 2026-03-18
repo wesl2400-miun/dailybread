@@ -19,7 +19,7 @@ Det finns också en liten funktionalitet för att spåra shabbattider för sin o
 samt se hur många dagar som finns kvar till shabbaten.
 
 API:er som används är:
-* Hebcal och DigiDates - Används för att hämta information om nästa shabbat samt räkna ut hur många dagar kvar som finns till shabbatdagen.
+* Hebcal- Används för att hämta information om nästa shabbat samt räkna ut hur många dagar kvar som finns till shabbatdagen.
 * Bible - Hämtar bibelverser
 * OpenMeteo - Hämtar väderprognosen för dagen
 * OpenStreeMap - Hämtar information om en vald ort, bland annat dess koordinater.

@@ -31,9 +31,9 @@ export class ShabView {
       paragraph(this._root, CONTENT.SHAB_VIEW.daysLeft(countdown));
     }
     paragraph(this._root, CONTENT.SHAB_VIEW.times(city));
-    const mess = emptyStr(countdown) 
+    const startMess = countdown < 0
       ? CONTENT.SHAB_VIEW.CURRENT : start;
-    paragraph(this._root, mess);
-    paragraph(this._root, end)
+    paragraph(this._root, startMess);
+    paragraph(this._root, end);
   }
 }

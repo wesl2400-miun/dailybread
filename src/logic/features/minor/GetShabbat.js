@@ -1,6 +1,7 @@
 import { Shabbat } from "../../models/Shabbat.js";
 import { query } from "../../utils/utils.js";
 import { API } from "../../refs/api.js";
+import { intervalToDuration } from "date-fns";
 
 /** Utför ett API-anrop till shabbat- och kalender-API:n samt
  *  lagrar resultatet i Shabbat-modellklassen.
@@ -29,7 +30,7 @@ export class GetShabbat {
       items, 'candles');
     const end = this._time(
       items, 'havdalah');
-    const countdown = await 
+    const countdown = 
       this._countdown(start.day);
     return new Shabbat(city,
       `${start.title} ${start.day}`,
@@ -71,18 +72,17 @@ export class GetShabbat {
     return { title, day };
   }
 
-  /** Utför ett API-anrop till kalender-API:n som beräknar hur många dagar det finns till 
-   * shabbat-dagen.
+  /** Räknar ut hur många dagar som finns kvar till shabbatdagen
+   * baserat på informationen från Hebcal-API:n
    * @private
-   * @param {string} day - Lagrar datumet i formatet år-månad-dag.
-   * @returns {Promise<number|string>} - Detta är en asynkron funktion som returnerar
-   * ett Promise-objekt med antingen en tom sträng data eller ett heltal som syftar
-   * på dagar som finns kvar till shabbat-dagen.
+   * @param {string} date - Lagrar datumet i formatet år-månad-dag.
+   * @returns {number} - Returnerar antalet dagar kvar till shabbaten;
    */
-  _countdown = async (day) => {
-    const data = await 
-      query(API.countdown(day));
-    if(data.error) return '';
-    return data.daysonly;
+  _countdown = (date) => {
+    const today = new Date();
+    const shabDay = new Date(date);
+    const countdown = intervalToDuration({
+      start: today, end: shabDay});
+    return countdown.days;
   }
 }

@@ -27,11 +27,5 @@ export const API = Object.freeze({
    * @param {string} lon - Longituden för en vald ort.
    */
   shabbat: (lat, lon) => `https://www.hebcal.com/shabbat?cfg=json&latitude=${lat}&longitude=${lon}&M=on&leyning=off`,
-  
-  /** Beräknar antalet dagar kvar till shabbaten och returnerar detta värde baserat på
-   * ett datum i formatet år-månad-dag.
-   * @param {string} date - Det kommande datumet i formatet år-månad-dag. 
-   */
-  countdown: (date) => `https://digidates.de/api/v1/countdown/${date}`
 });
 

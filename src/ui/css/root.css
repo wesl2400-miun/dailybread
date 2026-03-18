@@ -218,7 +218,7 @@ input[type=text] {
   color: #375486;
   font-size: 18px;
   font-weight: 500;
-  margin-top: 0.5rem;
+  margin: 0.5rem 0;
 }
 
 .checker {

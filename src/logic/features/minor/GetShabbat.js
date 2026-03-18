@@ -1,7 +1,7 @@
 import { Shabbat } from "../../models/Shabbat.js";
 import { query } from "../../utils/utils.js";
 import { API } from "../../refs/api.js";
-import { intervalToDuration } from "date-fns";
+import { parseISO, differenceInCalendarDays } from "date-fns";
 
 /** Utför ett API-anrop till shabbat- och kalender-API:n samt
  *  lagrar resultatet i Shabbat-modellklassen.
@@ -74,15 +74,17 @@ export class GetShabbat {
 
   /** Räknar ut hur många dagar som finns kvar till shabbatdagen
    * baserat på informationen från Hebcal-API:n
+   * Använder funktionerna parseISO och differenceInCalenderDays
+   * för att se till datumen stämmer med tidszonen och beräkningen är korrekt.
    * @private
    * @param {string} date - Lagrar datumet i formatet år-månad-dag.
    * @returns {number} - Returnerar antalet dagar kvar till shabbaten;
    */
   _countdown = (date) => {
     const today = new Date();
-    const shabDay = new Date(date);
-    const countdown = intervalToDuration({
-      start: today, end: shabDay});
-    return countdown.days;
+    const shabDay = parseISO(date);
+    const countdown = differenceInCalendarDays(
+      shabDay, today);
+    return countdown;
   }
 }

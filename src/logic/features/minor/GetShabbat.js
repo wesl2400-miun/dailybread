@@ -85,7 +85,6 @@ export class GetShabbat {
     const shabDay = parseISO(date);
     const countdown = differenceInCalendarDays(
       shabDay, today);
-      console.log(countdown)
     return countdown;
   }
 }

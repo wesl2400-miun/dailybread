@@ -1,9 +1,10 @@
-
+# Bygger projektet med hjälp av Vite och publicerar det till GithubPages.
 name: Deploy static content to Pages
 
 on:
   push:
-    branches: ['master']
+  # Bygg projektet från denna gren.
+    branches: ['master'] 
 
   workflow_dispatch:
 
@@ -31,13 +32,19 @@ jobs:
           node-version: lts/*
           cache: 'npm'
       - name: Install dependencies
+      # Installerar beroenden från package-lock.json
         run: npm ci
       - name: Build
-        run: npm run build -- --base /dailybread/
+      # Bygg projektet med Vite och lägg till '/dailybread/' till bas-URL:en
+      # Detta är superviktigt - annars hittas inte projektfilerna
+        run: npm run build -- --base /dailybread/ 
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
+      # Den färdiga appen uppladdas från './dist'-mappen. 
+      # I dist-mappen hamnar den optimerade och produktionsfärdiga 
+      # versionen av appen som skapas av Vite.
         with:
           path: './dist'
       - name: Deploy to GitHub Pages

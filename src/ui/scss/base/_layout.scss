@@ -1,5 +1,7 @@
 @use 'dimens';
 
+// Återanvändbara inställningar för HTML-behållare.
+
 @mixin flex($cont, $item, $dir) {
   display: flex;
   justify-content: $cont;

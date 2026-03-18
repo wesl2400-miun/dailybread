@@ -2,6 +2,8 @@
 @use '../base/layout';
 @use '../base/font';
 
+// Stilen för knappar.
+
 .base-btn {
   height: 40px;
   @extend .font;
@@ -34,6 +36,7 @@ input[type=submit] {
 
 button {
   width: 90%;
+  margin-top: 2rem;
   margin-bottom: 1rem;
   @extend .base-btn;
 }

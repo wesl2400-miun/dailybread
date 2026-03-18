@@ -1,13 +1,19 @@
 @use '../base/layout';
 
+// Stilen för listor.
+
 ol {
   width: 100%;
   list-style: none;
+  @include layout.flex(center, start, column);
   @include layout.no-margins;
   box-sizing: border-box;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
 
   li {
-    @include layout.flex(center, center, row);
+    @include layout.flex(center, start, row);
+    gap: 0.4rem;
 
     span {
       font-size: 0.8rem;

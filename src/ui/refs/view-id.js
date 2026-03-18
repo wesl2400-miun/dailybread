@@ -1,4 +1,7 @@
 
+/** ID för specifika HTML-element.
+ * @enum {string}
+ */
 export const VIEW_ID = Object.freeze({
   APP: 'app',
   FOOTER: 'shabbat',

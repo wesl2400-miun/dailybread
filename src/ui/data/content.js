@@ -1,5 +1,9 @@
 
- export const CONTENT = Object.freeze({
+/** Textinnehåll som visas i appens olika vyer. 
+ * Vissa är hårdkodade och vissa genereras dynamiskt.
+ * @namespace CONTENT
+ */
+export const CONTENT = Object.freeze({
   CITY_VIEW: Object.freeze({
     TITLE1: 'How it works',
     ABOUT: 'Our Bible engine generates a personalized Bible passage and prayer ' +
@@ -10,6 +14,7 @@
   LOC_CARD: Object.freeze({
     TITLE: 'Type Your City',
     CITY: 'My City',
+    PLACEHOLDER: 'Jerusalem',
     SAVE: 'Remember my location in this browser',
     SUBMIT: 'PICK MY PRAYER',
     ERROR: 'City not found. Are you sure you spelled it correctly?'

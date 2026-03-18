@@ -41,6 +41,7 @@ input[type=submit] {
 
 button {
   width: 90%;
+  margin-top: 2rem;
   margin-bottom: 1rem;
 }
 
@@ -131,8 +132,24 @@ article {
   background-color: #FFFFFF;
   border: 3px solid #375486;
 }
+article p {
+  padding: 0;
+  margin: 0;
+}
 article section {
-  padding: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  margin-top: 1rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  gap: 1rem;
+}
+article section h1, article section h2, article section h3 {
+  margin: 0;
+  padding: 0.3rem 0;
 }
 
 footer {
@@ -184,6 +201,7 @@ fieldset, form {
 fieldset {
   border: none;
   padding: 1rem;
+  margin-top: 2rem;
 }
 
 legend {
@@ -213,6 +231,7 @@ input[type=text] {
   margin: 0;
   box-sizing: border-box;
   gap: 0.5rem;
+  margin-top: 1rem;
 }
 .checker label {
   padding: 0;
@@ -233,15 +252,22 @@ input[type=text] {
 ol {
   width: 100%;
   list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
 }
 ol li {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   flex-direction: row;
+  gap: 0.4rem;
 }
 ol li span {
   font-size: 0.8rem;

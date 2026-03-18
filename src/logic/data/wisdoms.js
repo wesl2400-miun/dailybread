@@ -1,5 +1,11 @@
 import { EXCERPT } from "../refs/excerpt.js";
 
+/**
+ * Lagrar referenser till psalmavsnitt enligt olika kategorier.
+ * Nyckeln är enumvärdet EXCERPT medan värdet är en lista med referenser till verser från Nya Testamentet.
+ * @type {Map<EXCERPT, string[]>} 
+ */
+
 export const WISDOMS = new Map([
   [EXCERPT.PRAISE, [
     'Mark10:14', 'John17:4', 'John17:23', 'John17:20', 'John13:31',

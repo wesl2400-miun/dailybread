@@ -1,6 +1,8 @@
 @use '../base/colors';
 @use '../base/layout';
 
+// Stilen för dator och surfplatta.
+
 @media screen and (max-height: 600px) {
   .logo, footer {
     position: static;

@@ -4,16 +4,18 @@ import { VIEW_ID } from "./ui/refs/view-id.js";
 import { SCREEN } from "./ui/refs/screen.js";
 
 
-const main = async () => {
+/** Skapar alla vyer och sätter upp hela appen.
+ */
+const main = () => {
   
   const app = element(VIEW_ID.APP);
   const footer = element(VIEW_ID.FOOTER);
  
   const appView = new AppView(app, footer);
-  await appView.init(SCREEN.LOCATION);
+  appView.init(SCREEN.LOCATION);
 }
 
-await main().catch((error) => {
-  console.log(error)
-});
+/** Startar appen.
+ */
+main();
 

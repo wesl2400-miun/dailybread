@@ -99,9 +99,9 @@ export class CalcScore {
    */
   _calcTemp = (bibleset) => {
     const { temp } = this._weather;
-    if(temp <= 15) {
+    if(temp <= 0) {
       bibleset.push(EXCERPT.STRENGTH);
-    } else if(temp > 15 && temp <= 25) {
+    } else if(temp > 0 && temp <= 25) {
       bibleset.push(EXCERPT.PRAISE);
     } else if(temp > 25) {
       bibleset.push(EXCERPT.TRIAL);

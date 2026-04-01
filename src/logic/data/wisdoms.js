@@ -24,7 +24,7 @@ export const WISDOMS = new Map([
     'Matthew5:12', 'Matthew10:16', 'Matthew10:17', 'Matthew5:11', 'Matthew 10:28'
   ]],
   [EXCERPT.ISRAEL, [
-    'John6:37', 'John:10:16', 'John6:39', 'John6:58', 'John13:45',
+    'John6:37', 'John:10:16', 'John6:39', 'John6:58', 'John14:27',
     'John14:18', 'Luke15:32', 'Luke19:10', 'Luke13:35', 'Matthew26:64'
   ]],
   [EXCERPT.SHABBAT, [

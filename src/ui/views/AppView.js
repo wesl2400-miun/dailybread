@@ -23,7 +23,6 @@ export class AppView {
   /** Initierar appen. det vill säga sätter upp vyer och tilldelar de händelser
    * baserat på en screen-flaggan.
    * @param {SCREEN} screen - Bestämmer vilken vy som ska visas.
-   * @returns {Promose<void>} - Funktionen är asynkron och returnerar ett Promise-objekt.
    */
   init = (screen) => {
     this._app.refresh(screen);

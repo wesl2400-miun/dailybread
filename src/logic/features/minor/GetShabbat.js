@@ -1,7 +1,7 @@
 import { Shabbat } from "../../models/Shabbat.js";
 import { query } from "../../utils/utils.js";
 import { API } from "../../refs/api.js";
-import { parseISO, differenceInCalendarDays } from "date-fns";
+import { parseISO, differenceInCalendarDays, format, addWeeks } from "date-fns";
 
 /** Utför ett API-anrop till shabbat- och kalender-API:n samt
  *  lagrar resultatet i Shabbat-modellklassen.
@@ -26,6 +26,7 @@ export class GetShabbat {
    */
   _unpackShab = async (city, result) => {
     const { items } = result;
+    console.log(result)
     const start = this._time(
       items, 'candles');
     const end = this._time(
@@ -46,8 +47,12 @@ export class GetShabbat {
     if(!this._location) return null;
     const { city, lat, 
       lon } = this._location;
+    const form = 'yyyy-MM-dd';
+    const now = format(new Date(), form);
+    const nxtWeek = format(
+      addWeeks(now, 1), form);
     const result = await 
-      query(API.shabbat(lat, lon));
+      query(API.shabbat(lat, lon, now, nxtWeek));
     if(result.error) return null;
     return await this._unpackShab(
       city, result);

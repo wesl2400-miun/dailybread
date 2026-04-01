@@ -26,6 +26,6 @@ export const API = Object.freeze({
    * @param {string} lat - Latituden för en vald ort.
    * @param {string} lon - Longituden för en vald ort.
    */
-  shabbat: (lat, lon) => `https://www.hebcal.com/shabbat?cfg=json&latitude=${lat}&longitude=${lon}&M=on&leyning=off`,
+  shabbat: (lat, lon, start, end) => `https://www.hebcal.com/hebcal?v=1&cfg=json&latitude=${lat}&longitude=${lon}&geo=pos&start=${start}&end=${end}`,
 });
 

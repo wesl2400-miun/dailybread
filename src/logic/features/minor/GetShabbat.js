@@ -26,7 +26,6 @@ export class GetShabbat {
    */
   _unpackShab = async (city, result) => {
     const { items } = result;
-    console.log(result)
     const start = this._time(
       items, 'candles');
     const end = this._time(

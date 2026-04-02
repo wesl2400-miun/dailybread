@@ -1,10 +1,10 @@
 
 # Projektuppgift - Frontend-baserad webbutveckling VT2026
 ## DailyBread - Christian Prayer App
-Denna app är en böneapp för kristna av den messianska denominationen. Appen tilldelar
+Denna app är en böneapp för kristna av det messianska samfundet. Appen tilldelar
 en anpassad bön från bibelns Psalmbok och ett Jesu ord från Nya Testamentet baserat
 på väder, region och shabattider. Bibelverserna beräknas med hjälp av en så kallad
-bibel-motor som räknar ut vilka bibelreferenser som ska skickas till bibel-API:n. Dessa
+bibel-motor som räknar ut vilka bibelreferenser som ska skickas till bibel-API:t. Dessa
 referenser väljs ur sex kategorier och vilken kategori som väljs beror på dagens
 temperatur och väderkoder för en vald plats, världsregionen platsen befinner sig i samt shabbattider.
 

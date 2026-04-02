@@ -1,4 +1,3 @@
-import { emptyStr } from "../../logic/utils/utils.js";
 import { CONTENT } from "../data/content.js";
 import { paragraph } from "../utils/element.js";
 

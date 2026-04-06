@@ -13,7 +13,7 @@
 
 .font, body, input[type=text], .base-btn, input[type=submit], button {
   font-family: "Public Sans", sans-serif;
-  font-optical-sizing: auto;
+  font-optical-sizing: none;
   font-weight: 300;
   font-style: normal;
 }

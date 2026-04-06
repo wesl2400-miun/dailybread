@@ -13,9 +13,9 @@
 
 .font, body, input[type=text], .base-btn, input[type=submit], button {
   font-family: "Public Sans", sans-serif;
-  font-optical-sizing: none;
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 
 .base-btn, button, input[type=submit] {

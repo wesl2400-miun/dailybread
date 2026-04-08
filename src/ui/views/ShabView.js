@@ -17,12 +17,12 @@ export class ShabView {
    * @param {Shabbat} shabbat - Modellklassen för shabbat.
    */
   refresh = (shabbat) => {
+    this._root.innerHTML = '';
     if(!shabbat) {
       paragraph(this._root, CONTENT
         .SHAB_VIEW.ERROR);
       return;
     }
-    this._root.innerHTML = '';
     let { city, start, 
       end, countdown } = shabbat;
     paragraph(this._root, CONTENT

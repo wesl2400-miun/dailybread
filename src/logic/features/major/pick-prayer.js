@@ -16,8 +16,10 @@ export const pickPrayer = async (location, prog) => {
   const getWeat = new GetWeather(location);
   prog.style.width = '20%';
   const getShabb = new GetShabbat(location);
-  const [weather, shabbat] = await Promise.allSettled([
+  const [weathProm, shabbProm] = await Promise.allSettled([
   getWeat.weather(), getShabb.shabbat()]);
+  const weather = weathProm.value;
+  const shabbat = shabbProm.value;
   prog.style.width = '70%';
   const calcScore = new CalcScore(
   location, weather, shabbat);

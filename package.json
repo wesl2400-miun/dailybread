@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npm run sass && vite build",
     "preview": "vite preview",
     "sass": "sass ./src/ui/scss:./src/ui/css"
   },
